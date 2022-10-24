@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "SampleApplication-Swift-icon-3.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
