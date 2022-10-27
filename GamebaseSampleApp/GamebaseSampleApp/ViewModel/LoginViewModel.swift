@@ -62,7 +62,8 @@ extension LoginViewModel {
         var additionalInfo = [String: Any]()
         
         /*
-         TODO: For LINE login, you can register multiple regions to provide services to the console.
+         [NOTICE]
+         For LINE login, you can register multiple regions to provide services to the console.
          When logging in as an IdP, you must manually enter a region to provide services as an additionalInfo parameter.
          https://docs.toast.com/en/Game/Gamebase/en/ios-authentication/#login-as-the-latest-login-idp
          */
@@ -82,7 +83,8 @@ extension LoginViewModel {
                 switch error.gamebaseErrorCode() {
                 case .ERROR_BANNED_MEMBER:
                     /*
-                     TODO: If you set to TCGBConfiguration.enableBanPopup = false, check the ban information and inform the game user why he cannot play the game.
+                     [NOTICE]
+                     If you set to TCGBConfiguration.enableBanPopup = false, check the ban information and inform the game user why he cannot play the game.
                      https://docs.toast.com/en/Game/Gamebase/en/ios-authentication/#login-flow
                      */
                     fallthrough

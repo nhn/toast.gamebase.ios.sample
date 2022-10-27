@@ -17,22 +17,23 @@ target 'GamebaseSampleApp' do
   pod 'QuickTableViewController', '1.3.1'
 
   # Gamebase
-  pod 'Gamebase', '2.43.3'
-  pod 'GamebaseAuthFacebookAdapter', '2.43.3'
-  pod 'GamebaseAuthGamecenterAdapter', '2.43.3'
-  pod 'GamebaseAuthPaycoAdapter', '2.43.3'
-  pod 'GamebaseAuthNaverAdapter', '2.43.3'
-  pod 'GamebaseAuthTwitterAdapter', '2.43.3'
-  pod 'GamebaseAuthGoogleAdapter', '2.43.3'
-  pod 'GamebaseAuthLineAdapter', '2.43.3'
-  pod 'GamebaseAuthAppleidAdapter', '2.43.3'
-  pod 'GamebaseAuthWeiboAdapter', '2.43.3'
-  pod 'GamebasePushAdapter', '2.43.3'
-  pod 'GamebasePurchaseIAPAdapter', '2.43.3'
+  $GAMEBASE_SDK_VERSION = '2.44.0'
+  pod 'Gamebase', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthFacebookAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthGamecenterAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthPaycoAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthNaverAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthTwitterAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthGoogleAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthLineAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthAppleidAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthWeiboAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebasePushAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebasePurchaseIAPAdapter', $GAMEBASE_SDK_VERSION
   
   # 아래 모듈의 사용 방법은 고객센터로 문의하시기 바랍니다.
-  # pod 'GamebaseAuthHangameAdapter', '2.43.3'
-  pod 'GamebaseAuthKakaogameAdapter', '2.43.3'
+  # pod 'GamebaseAuthHangameAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthKakaogameAdapter', $GAMEBASE_SDK_VERSION
 
   target 'GamebaseSampleAppTests' do
     inherit! :search_paths
@@ -43,4 +44,15 @@ target 'GamebaseSampleApp' do
     # Pods for testing
   end
 
+end
+
+# 참고: https://stackoverflow.com/questions/72561696/xcode-14-needs-selected-development-team-for-pod-bundles
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+      target.build_configurations.each do |config|
+        config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+      end
+    end
+  end
 end

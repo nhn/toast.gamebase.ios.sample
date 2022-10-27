@@ -44,14 +44,16 @@ extension HomeViewModel: ViewModelType {
             })
             .flatMap { _ in
                 /*
-                 TODO: Request a list of non-consumed items, which have not been normally consumed (delivered, or provided) after purchase.
+                 [NOTICE]
+                 Request a list of non-consumed items, which have not been normally consumed (delivered, or provided) after purchase.
                  https://docs.toast.com/en/Game/Gamebase/en/ios-purchase/#list-non-consumed-items
                  */
                 GamebaseAsObservable.requestItemListOfNotConsumed()
             }
             .do(onNext: { [weak self] _ in
                 /*
-                 TODO: In case there is any non-purchased item, request the game server (item server) to proceed with item delivery (provision).
+                 [NOTICE]
+                 In case there is any non-purchased item, request the game server (item server) to proceed with item delivery (provision).
                  */
                 self?.isLoading.accept(false)
             })
@@ -141,7 +143,8 @@ extension HomeViewModel {
                 self?.showAlertForRouteToRootView(title: "로그아웃", message: "Gamebase Access Token이 만료되었습니다. 다시 로그인해주세요.")
             } else if $0.category == TCGBGamebaseEventCategory.serverPushAppKickoutMessageReceived.rawValue {
                 /*
-                 TODO: If you register a kickout ServerPush message in Operation > Kickout in the NHN Cloud Gamebase console, all clients connected to Gamebase will receive a kickout message.
+                 [NOTICE]
+                 If you register a kickout ServerPush message in Operation > Kickout in the NHN Cloud Gamebase console, all clients connected to Gamebase will receive a kickout message.
                  This event occurs immediately after receiving a server message from the client device.
                  It can be used to pause the game when the game is running, as in the case of 'Auto Play'.
                  */

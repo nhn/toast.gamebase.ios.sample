@@ -46,7 +46,8 @@ extension ShoppingViewModel: ViewModelType {
                 self?.isLoading.accept(true)
                 
                 /*
-                 TODO: Request a list of non-consumed items, which have not been normally consumed (delivered, or provided) after purchase.
+                 [NOTICE]
+                 Request a list of non-consumed items, which have not been normally consumed (delivered, or provided) after purchase.
                  https://docs.toast.com/en/Game/Gamebase/en/ios-purchase/#list-non-consumed-items
                  */
                 self?.requestItemListOfNotConsumed()
@@ -89,7 +90,8 @@ extension ShoppingViewModel {
                 self?.requestItemListPurchasable()
                                 
                 /*
-                 TODO: In case there is any non-purchased item, request the game server (item server) to proceed with item delivery (provision).
+                 [NOTICE]
+                 In case there is any non-purchased item, request the game server (item server) to proceed with item delivery (provision).
                  */
             } onError: { [weak self] _ in
                 self?.requestItemListPurchasable()

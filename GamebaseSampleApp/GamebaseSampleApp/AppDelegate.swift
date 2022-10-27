@@ -49,24 +49,24 @@ extension AppDelegate {
         TCGBGamebase.addEventHandler {
             if $0.category == TCGBGamebaseEventCategory.purchaseUpdated.rawValue {
                 /*
-                 TODO: This event is triggered when a product is acquired by redeeming a promotion code. Can acquire payment receipt information.
+                 [NOTICE]
+                 This event is triggered when a product is acquired by redeeming a promotion code. Can acquire payment receipt information.
                  */
             } else if $0.category == TCGBGamebaseEventCategory.pushReceivedMessage.rawValue {
                 /*
-                 TODO: This event occurs when a push message is received. By converting the extras field to JSON, you can also get custom information sent along with the push message.
+                 [NOTICE]
+                 This event occurs when a push message is received. By converting the extras field to JSON, you can also get custom information sent along with the push message.
                  */
             } else if $0.category == TCGBGamebaseEventCategory.pushClickMessage.rawValue {
                 /*
-                 TODO: This event is triggered when a received push message is clicked.
+                 [NOTICE]
+                 This event is triggered when a received push message is clicked.
                  */
             } else if $0.category == TCGBGamebaseEventCategory.pushClickAction.rawValue {
                 /*
-                 TODO: This event is triggered when the button created by the Rich Message feature is clicked.
-                 actionType provides the following:
-                 "OPEN_APP"
-                 "OPEN_URL"
-                 "REPLY"
-                 "DISMISS"
+                 [NOTICE]
+                 This event is triggered when the button created by the Rich Message feature is clicked.
+                 actionType provides the following: "OPEN_APP", "OPEN_URL", "REPLY", "DISMISS"
                  */
             }
         }
