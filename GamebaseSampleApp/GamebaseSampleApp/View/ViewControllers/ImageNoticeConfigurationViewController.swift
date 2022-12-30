@@ -78,15 +78,15 @@ extension ImageNoticeConfigurationViewController {
         let output = self.viewModel.transform(input: input)
         
         self.showImageNoticeButton.rx.tap
-            .subscribe { [weak self] _ in
-                self?.inputShowImageNotice.accept(())
+            .subscribe(with: self) { owner, _ in
+                owner.inputShowImageNotice.accept(())
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit { alertInfo in
-                UIViewController.showAlert(alertInfo: alertInfo)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
-            .disposed(by: disposeBag)
+            .disposed(by: disposeBag)        
     }
 }

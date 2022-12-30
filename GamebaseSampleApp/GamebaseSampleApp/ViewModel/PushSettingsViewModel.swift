@@ -35,15 +35,15 @@ extension PushSettingsViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.prepareItems
-            .subscribe(onNext: { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.getPushSettingItemList()
-            })
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.getPushSettingItemList()
+            }
             .disposed(by: disposeBag)
         
         input.enterForeground
             .flatMap { _ in GamebaseAsObservable.queryNotificationAllowed() }
-            .subscribe(onNext: { [weak self] allowed in
+            .subscribe(with: self) { owner, allowed in
                 if !allowed {
                     let action = UIAlertAction(title: "설정", style: .default, handler: { _ in
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
@@ -54,9 +54,9 @@ extension PushSettingsViewModel: ViewModelType {
                                               addCloseAction: false,
                                               additionalActions: [action])
                     
-                    self?.showAlert.accept(alertInfo)
+                    owner.showAlert.accept(alertInfo)
                 }
-            })
+            }
             .disposed(by: disposeBag)
         
         return Output(isLoading: isLoading.asSignal(),
@@ -79,18 +79,17 @@ extension PushSettingsViewModel {
                 configuration.adAgreementNight = agreement.adAgreementNight
                 return configuration
             }
-            .subscribe(onNext: {
-                config = $0
-            }, onDisposed: { [weak self] in
-                guard let self = self else { return }
-                self.pushConfiguration = config
-                self.notificationsOptions = options
+            .subscribe(with: self) {
+                config = $1
+            } onDisposed: { owner in
+                owner.pushConfiguration = config
+                owner.notificationsOptions = options
                 
-                let items = self.pushSettingItems()
+                let items = owner.pushSettingItems()
                 
-                self.pushSettingItemList.accept(items)
-                self.isLoading.accept(false)
-            })
+                owner.pushSettingItemList.accept(items)
+                owner.isLoading.accept(false)
+            }
             .disposed(by: disposeBag)
     }
     

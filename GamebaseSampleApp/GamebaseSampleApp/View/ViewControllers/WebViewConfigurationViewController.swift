@@ -53,7 +53,7 @@ extension WebViewConfigurationViewController {
     private func setupContents() {
         tableContents = [
             setupContentsModeSection(),
-            Section(title: "내비게이션바 설정", rows: [
+            Section(title: "내비게이션 바 설정", rows: [
                 SwitchRow(text: "뒤로가기 버튼 표시", switchValue: true, action: { [weak self] row in
                     if let row = row as? SwitchRowCompatible {
                         self?.viewModel.setBackButtonVisible(row.switchValue)
@@ -64,10 +64,10 @@ extension WebViewConfigurationViewController {
                         self?.viewModel.setNavigationBarVisible(row.switchValue)
                     }
                 }),
-                TapActionRow<CustomTapActionCell>(text: "내비게이션바 제목 설정", action: { [weak self] _ in
+                TapActionRow<CustomTapActionCell>(text: "내비게이션 바 제목 설정", action: { [weak self] _ in
                     self?.viewModel.setNavigationBarTitle()
                 }),
-                TapActionRow<CustomTapActionCell>(text: "내비게이션바 색상 설정", action: { [weak self] _ in
+                TapActionRow<CustomTapActionCell>(text: "내비게이션 바 색상 설정", action: { [weak self] _ in
                     self?.viewModel.setNavigationBarColor()
                 })
             ])
@@ -98,15 +98,14 @@ extension WebViewConfigurationViewController {
         let output = self.viewModel.transform(input: input)
         
         self.showWebViewButton.rx.tap
-            .subscribe { [weak self] _ in
-                self?.inputShowWebView.accept(())
+            .subscribe(with: self) { owner, _ in
+                owner.inputShowWebView.accept(())
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit { [weak self] alertInfo in
-                guard let self = self else { return }
-                UIViewController.showAlert(above: self, alertInfo: alertInfo)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

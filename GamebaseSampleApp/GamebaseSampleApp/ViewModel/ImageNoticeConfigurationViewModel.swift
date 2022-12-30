@@ -36,8 +36,8 @@ extension ImageNoticeConfigurationViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.showImageNotice
-            .subscribe { [weak self] _ in
-                self?.showImageNotice()
+            .subscribe(with: self) { owner, _ in
+                owner.showImageNotice()
             }
             .disposed(by: disposeBag)
         
@@ -92,10 +92,6 @@ extension ImageNoticeConfigurationViewModel {
 // MARK: - Business logic
 extension ImageNoticeConfigurationViewModel {
     private func showImageNotice() {
-        let closeCompletion: (TCGBError?) -> () = { [weak self] error in
-            self?.showAlert.accept(AlertInfo(title: "이미지 공지 종료", message: "error => \(error?.localizedDescription ?? "nil")"))
-        }
-        
         let schemeEvent: ((String?, TCGBError?) -> ()) = { [weak self] payload, error in
             guard let self = self else { return }
             
@@ -108,7 +104,7 @@ extension ImageNoticeConfigurationViewModel {
         
         TCGBImageNotice.showImageNotices(viewController: self.viewController,
                                          configuration: self.imageNoticeConfiguration,
-                                         closeCompletion: closeCompletion,
+                                         closeCompletion: nil,
                                          schemeEvent:schemeEvent)
     }
 }

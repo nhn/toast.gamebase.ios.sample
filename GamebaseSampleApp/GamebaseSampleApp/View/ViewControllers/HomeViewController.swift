@@ -57,29 +57,27 @@ extension HomeViewController {
         let output = viewModel.transform(input: input)
         
         sideMenuButton.rx.tap
-            .subscribe { [weak self] _ in
-                let menu = self?.storyboard!.instantiateViewController(withIdentifier: "leftMenuNavVC") as! SideMenuNavigationController
-                self?.present(menu, animated: true)
+            .subscribe(with: self) { owner, _ in
+                let menu = owner.storyboard?.instantiateViewController(withIdentifier: "leftMenuNavVC") as! SideMenuNavigationController
+                owner.present(menu, animated: true)
             }
             .disposed(by: disposeBag)
         
         output.isLoading
-            .emit { [weak self] isLoading in
-                guard let self = self else { return }
-                MBProgressHUD.showProgress(isLoading, to: self.view, animated: true)
+            .emit(with: self) { owner, isLoading in
+                MBProgressHUD.showProgress(isLoading, to: owner.view, animated: true)
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit { [weak self] alertInfo in
-                guard let self = self else { return }
-                UIViewController.showAlert(above: self, alertInfo: alertInfo)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
         
         output.routeToRootView
-            .emit { [weak self] _ in
-                self?.navigationController?.popToRootViewController(animated: true)
+            .emit(with: self) { owner, _ in
+                owner.navigationController?.popToRootViewController(animated: true)
             }
             .disposed(by: disposeBag)
         

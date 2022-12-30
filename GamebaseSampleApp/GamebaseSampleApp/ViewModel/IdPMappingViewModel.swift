@@ -74,14 +74,14 @@ extension IdPMappingViewModel {
         GamebaseAsObservable.addMapping(idPType, viewController: viewController ?? UIApplication.topViewController()!)
             .observe(on: MainScheduler.asyncInstance)
             .retry(when: GamebaseAsObservable.retryHandler)
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                self.mappingItemList.accept(self.idPMappingInfos)
-            } onError: { [weak self] error in
-                guard let self = self else { return }
+            .subscribe(with: self) { owner, _ in
+                owner.mappingItemList.accept(owner.idPMappingInfos)
+            } onError: { owner, error in
                 let alertInfo: AlertInfo
                 
                 switch error.gamebaseErrorCode() {
+                case .ERROR_AUTH_USER_CANCELED:
+                    alertInfo = AlertInfo(title: "연동 취소", message: "로그인이 취소되었습니다.")
                 case .ERROR_AUTH_ADD_MAPPING_ALREADY_MAPPED_TO_OTHER_MEMBER:
                     let tcgbError = error as! TCGBError
                     let ticket = TCGBForcingMappingTicket.forcingMappingTicket(fromError: tcgbError)!
@@ -109,40 +109,36 @@ extension IdPMappingViewModel {
                     alertInfo = AlertInfo(title: "연동 실패", message: "알 수 없는 이유로 연동에 실패했습니다.\n잠시 후 다시 시도해주세요.")
                 }
                 
-                self.showAlert.accept(alertInfo)
+                owner.showAlert.accept(alertInfo)
             }
             .disposed(by: disposeBag)
     }
     
     private func addMappingForcibly(ticket: TCGBForcingMappingTicket) {
         GamebaseAsObservable.addMappingForcibly(ticket: ticket, viewController: viewController)
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                self.mappingItemList.accept(self.idPMappingInfos)
-            } onError: { [weak self] _ in
-                guard let self = self else { return }
-                self.showAlert.accept(AlertInfo(title: "연동 실패", message: "알 수 없는 이유로 연동에 실패했습니다.\n잠시 후 다시 시도해주세요."))
+            .subscribe(with: self) { owner, _ in
+                owner.mappingItemList.accept(owner.idPMappingInfos)
+            } onError: { owner, _ in
+                owner.showAlert.accept(AlertInfo(title: "연동 실패",
+                                                 message: "알 수 없는 이유로 연동에 실패했습니다.\n잠시 후 다시 시도해주세요."))
             }
             .disposed(by: disposeBag)
     }
     
     private func removeMapping(idPType: String) {
         GamebaseAsObservable.removeMapping(idPType, viewController: viewController ?? UIApplication.topViewController()!)
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                self.mappingItemList.accept(self.idPMappingInfos)
-            } onError: { [weak self] _ in
-                guard let self = self else { return }
-                self.showAlert.accept(AlertInfo(title: "연동 해제 실패", message: "다시 시도해주세요."))
+            .subscribe(with: self) { owner, _ in
+                owner.mappingItemList.accept(owner.idPMappingInfos)
+            } onError: { owner, _ in
+                owner.showAlert.accept(AlertInfo(title: "연동 해제 실패",
+                                                 message: "다시 시도해주세요."))
             }
             .disposed(by: disposeBag)
     }
     
     private func changeLogin(ticket: TCGBForcingMappingTicket) {
         GamebaseAsObservable.changeLogin(ticket: ticket, viewController: viewController)
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                
+            .subscribe(with: self) { owner, _ in
                 let alertInfo = AlertInfo(title: "계정 변경 성공",
                                           message: "앱을 재시작 합니다.",
                                           addCloseAction: false,
@@ -150,10 +146,10 @@ extension IdPMappingViewModel {
                     self?.routeToRootView.accept(())
                 })
                 
-                self.showAlert.accept(alertInfo)
-            } onError: { [weak self] _ in
-                guard let self = self else { return }
-                self.showAlert.accept(AlertInfo(title: "계정 변경 실패", message: "다시 시도해주세요."))
+                owner.showAlert.accept(alertInfo)
+            } onError: { owner, _ in
+                owner.showAlert.accept(AlertInfo(title: "계정 변경 실패",
+                                                 message: "다시 시도해주세요."))
             }
             .disposed(by: disposeBag)
 

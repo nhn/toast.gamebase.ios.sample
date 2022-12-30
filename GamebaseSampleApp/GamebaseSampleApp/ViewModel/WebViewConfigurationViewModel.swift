@@ -35,8 +35,8 @@ extension WebViewConfigurationViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.showWebView
-            .subscribe { [weak self] _ in
-                self?.showWebView()
+            .subscribe(with: self) { owner, _ in
+                owner.showWebView()
             }
             .disposed(by: disposeBag)
         return Output(showAlert: showAlert.asSignal())
@@ -69,9 +69,9 @@ extension WebViewConfigurationViewModel {
     
     func setNavigationBarTitle() {
         let textFields = [
-            AlertTextFieldInfo(placeholder: "내비게이션바 제목")
+            AlertTextFieldInfo(placeholder: "내비게이션 바 제목")
         ]
-        let alertInfo = AlertInfo(title: "내비게이션바 제목 설정",
+        let alertInfo = AlertInfo(title: "내비게이션 바 제목 설정",
                                   textFields: textFields,
                                   confirmHandler: { [weak self] alert in
             guard let title = alert.textFields?[0].text, !title.isEmpty else { return }
@@ -88,7 +88,7 @@ extension WebViewConfigurationViewModel {
             AlertTextFieldInfo(placeholder: "ALPHA(0 ~ 1.0)")
         ]
         
-        let alertInfo = AlertInfo(title: "내비게이션바 배경색 설정",
+        let alertInfo = AlertInfo(title: "내비게이션 바 배경색 설정",
                                   textFields: textFields,
                                   confirmHandler: { [weak self] alert in
             

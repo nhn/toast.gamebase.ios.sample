@@ -80,10 +80,9 @@ extension AppPermissionViewController {
     
     private func bind() {
         okButton.rx.tap
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                self.viewModel.agreeAboutAppPermission()
-                self.dismiss(animated: true)
+            .subscribe(with: self) { owner, _ in
+                owner.viewModel.agreeAboutAppPermission()
+                owner.dismiss(animated: true)
             }
             .disposed(by: disposeBag)
     }

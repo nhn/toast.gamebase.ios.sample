@@ -36,8 +36,8 @@ extension TermsConfigurationViewModel: ViewModelType {
 
     func transform(input: Input) -> Output {
         input.showTermsView
-            .subscribe { [weak self] _ in
-                self?.showTermsView()
+            .subscribe(with: self) { owner, _ in
+                owner.showTermsView()
             }
             .disposed(by: disposeBag)
         
@@ -55,10 +55,12 @@ extension TermsConfigurationViewModel {
 extension TermsConfigurationViewModel {
     private func showTermsView() {
         GamebaseAsObservable.showTermsView(configuration: self.showTermsConfiguration, viewController: self.viewController)
-            .subscribe { [weak self] dataContainer in
-                self?.showAlert.accept(AlertInfo(title: "약관 창 종료 (성공)", message: "datContainer => \(dataContainer)"))
-            } onError: { [weak self] error in
-                self?.showAlert.accept(AlertInfo(title: "약관 창 종료 (실패)", message: "error => \(error.localizedDescription)"))
+            .subscribe(with: self) { owner, dataContainer in
+                owner.showAlert.accept(AlertInfo(title: "약관 창 종료 (성공)",
+                                                 message: "datContainer => \(dataContainer)"))
+            } onError: { owner, error in
+                owner.showAlert.accept(AlertInfo(title: "약관 창 종료 (실패)",
+                                                 message: "error => \(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }

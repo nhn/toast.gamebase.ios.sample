@@ -57,29 +57,28 @@ extension ShoppingViewController {
         
         Observable
             .zip(tableView.rx.modelSelected(ShoppingCellModel.self), tableView.rx.itemSelected)
-            .bind { [weak self] (item, indexPath) in
+            .bind { [weak self] item, indexPath in
                 self?.tableView.deselectRow(at: indexPath, animated: true)
                 self?.inputTryToPurchase.accept(item.productId)
             }
             .disposed(by: disposeBag)
         
         output.isLoading
-            .emit { [weak self] isLoading in
-                guard let self = self else { return }
-                MBProgressHUD.showProgress(isLoading, to: self.view, animated: true)
+            .emit(with: self) { owner, isLoading in
+                MBProgressHUD.showProgress(isLoading, to: owner.view, animated: true)
             }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
                 
         output.showEmptyView
-            .emit { [weak self] _ in
-                self?.emptyLabel.isHidden = false
-                self?.tableView.isHidden = true
+            .emit(with: self) { owner, _ in
+                owner.emptyLabel.isHidden = false
+                owner.tableView.isHidden = true
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit {
-                UIViewController.showAlert(alertInfo: $0)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

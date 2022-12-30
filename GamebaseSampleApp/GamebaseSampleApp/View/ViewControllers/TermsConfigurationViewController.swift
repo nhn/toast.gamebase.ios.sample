@@ -66,14 +66,14 @@ extension TermsConfigurationViewController {
         let output = self.viewModel.transform(input: input)
         
         self.showTermsViewButton.rx.tap
-            .subscribe { [weak self] _ in
-                self?.inputShowTermsView.accept(())
+            .subscribe(with: self) { owner, _ in
+                owner.inputShowTermsView.accept(())
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit {
-                UIViewController.showAlert(alertInfo: $0)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

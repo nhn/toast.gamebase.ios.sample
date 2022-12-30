@@ -24,6 +24,10 @@ final class IntroViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.bind()
     }
     
@@ -44,10 +48,9 @@ extension IntroViewController {
         let output = viewModel.transform(input: input)
 
         output.isAppPermissionAgreed
-            .emit { [weak self] isAgreed in
-                guard let self = self else { return }
-                if isAgreed == false {
-                    self.performSegue(withIdentifier: AppPermissionViewController.segueID, sender: nil)
+            .emit(with: self) { owner, isAgreed in
+                guard isAgreed == true else {
+                    owner.performSegue(withIdentifier: AppPermissionViewController.segueID, sender: nil)
                     return
                 }
                 
@@ -56,15 +59,14 @@ extension IntroViewController {
             .disposed(by: disposeBag)
                 
         output.routeToChildView
-            .emit { [weak self] segueID in
-                guard let self = self else { return }
-                self.performSegue(withIdentifier: segueID, sender: nil)
+            .emit(with: self) { owner, segueID in
+                owner.performSegue(withIdentifier: segueID, sender: nil)
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit {
-                UIViewController.showAlert(alertInfo: $0)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

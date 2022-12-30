@@ -91,14 +91,14 @@ extension PushConfigurationViewController {
         let output = viewModel.transform(input: input)
         
         self.registerPushButton.rx.tap
-            .subscribe { [weak self] _ in
-                self?.inputRegisterPush.accept(())
+            .subscribe(with: self) { owner, _ in
+                owner.inputRegisterPush.accept(())
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit {
-                UIViewController.showAlert(alertInfo: $0)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

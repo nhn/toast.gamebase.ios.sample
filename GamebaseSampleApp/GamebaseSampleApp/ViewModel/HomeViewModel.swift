@@ -69,7 +69,7 @@ extension HomeViewModel: ViewModelType {
                 dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분"
                 return dateFormatter.string(from: date)
             }
-            .subscribe(onNext: { [weak self] date in
+            .subscribe(with: self) { owner, date in
                 let actions = [
                     UIAlertAction(title: "철회하기", style: .destructive, handler: { [weak self] _ in
                         self?.cancelTemporaryWithdrawal()
@@ -78,8 +78,8 @@ extension HomeViewModel: ViewModelType {
                 let alertInfo = AlertInfo(title: "주의",
                                           message: "\(date) 이후 계정이 탈퇴됩니다.\n탈퇴 유예를 철회하고 싶으시면, '철회하기' 버튼을 눌러주세요.",
                                           additionalActions: actions)
-                self?.showAlert.accept(alertInfo)
-            })
+                owner.showAlert.accept(alertInfo)
+            }
             .disposed(by: disposeBag)
 
         return Output(isLoading: isLoading.asSignal(),
@@ -110,10 +110,10 @@ extension HomeViewModel {
                 configuration.adAgreementNight = agreement.adAgreementNight
                 return configuration
             }
-            .subscribe(onNext: { [weak self] config in
+            .subscribe(with: self) { owner, config in
                 let options = TCGBPush.notificationOptions()
-                self?.registerPush(configuration: config, notificationOptions: options)
-            })
+                owner.registerPush(configuration: config, notificationOptions: options)
+            }
             .disposed(by: disposeBag)
     }
     
@@ -126,10 +126,11 @@ extension HomeViewModel {
     
     private func cancelTemporaryWithdrawal() {
         GamebaseAsObservable.cancelTemporaryWithdrawal()
-            .subscribe { [weak self] _ in
-                self?.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 성공"))
-            } onError: { [weak self] error in
-                self?.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 실패", message: "잠시 후 'Developer > 탈퇴 유예 철회' 버튼을 눌러서 다시 시도해주세요."))
+            .subscribe(with: self) { owner, _ in
+                owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 성공"))
+            } onError: { owner, error in
+                owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 실패",
+                                                 message: "잠시 후 'Developer > 탈퇴 유예 철회' 버튼을 눌러서 다시 시도해주세요."))
             }
             .disposed(by: disposeBag)
     }
@@ -261,30 +262,33 @@ extension HomeViewModel {
     
     private func withdraw() {
         GamebaseAsObservable.withdraw()
-            .subscribe { [weak self] _ in
-                self?.routeToRootView.accept(())
-            } onError: { [weak self] _ in
-                self?.showAlertForTerminateApp(title: "탈퇴하기 실패", message: "알 수 없는 이유로 탈퇴하기에 실패했습니다. 앱을 종료합니다.")
+            .subscribe(with: self) { owner, _ in
+                owner.routeToRootView.accept(())
+            } onError: { owner, _ in
+                owner.showAlertForTerminateApp(title: "탈퇴하기 실패",
+                                               message: "알 수 없는 이유로 탈퇴하기에 실패했습니다. 앱을 종료합니다.")
             }
             .disposed(by: disposeBag)
     }
     
     private func loginForRemoveMapping(idPType: String, revokedIdP: String, additionalInfo: [String: Any], title: String) {
         GamebaseAsObservable.login(idPType, additionalInfo: additionalInfo, viewController: self.viewController ?? UIApplication.topViewController()!)
-            .subscribe { [weak self] _ in
-                self?.removeMapping(idPType: revokedIdP, title: title)
-            } onError: { [weak self] error in
-                self?.showAlertForTerminateApp(title: title, message: "알 수 없는 이유로 로그인에 실패했습니다. 앱을 종료합니다.")
+            .subscribe(with: self) { owner, _ in
+                owner.removeMapping(idPType: revokedIdP, title: title)
+            } onError: { owner, error in
+                owner.showAlertForTerminateApp(title: title,
+                                               message: "알 수 없는 이유로 로그인에 실패했습니다. 앱을 종료합니다.")
             }
             .disposed(by: disposeBag)
     }
     
     private func removeMapping(idPType: String, title: String, message: String? = nil) {
         GamebaseAsObservable.removeMapping(idPType, viewController: self.viewController)
-            .subscribe { [weak self] _ in
-                self?.routeToRootView.accept(())
-            } onError: { [weak self] _ in
-                self?.showAlertForTerminateApp(title: title, message: "알 수 없는 이유로 연동 해제에 실패했습니다. 앱을 종료합니다.")
+            .subscribe(with: self) { owner, _ in
+                owner.routeToRootView.accept(())
+            } onError: { owner, _ in
+                owner.showAlertForTerminateApp(title: title,
+                                               message: "알 수 없는 이유로 연동 해제에 실패했습니다. 앱을 종료합니다.")
             }
             .disposed(by: disposeBag)
     }

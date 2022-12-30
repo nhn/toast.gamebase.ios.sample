@@ -31,9 +31,9 @@ extension PushConfigurationViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.registerPush
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.registerPush()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.registerPush()
             }
             .disposed(by: disposeBag)
         
@@ -95,12 +95,14 @@ extension PushConfigurationViewModel {
 extension PushConfigurationViewModel {
     private func registerPush() {
         GamebaseAsObservable.registerPush(configuration: self.pushConfiguration, notificationOptions: self.notificationOptions)
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "푸시 설정 등록 성공", message: "푸시 설정을 등록했습니다."))
-            } onError: { [weak self] error in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "푸시 설정 등록 실패", message: "\(error.localizedDescription)"))
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "푸시 설정 등록 성공",
+                                                 message: "푸시 설정을 등록했습니다."))
+            } onError: { owner, error in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "푸시 설정 등록 실패",
+                                                 message: "\(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }

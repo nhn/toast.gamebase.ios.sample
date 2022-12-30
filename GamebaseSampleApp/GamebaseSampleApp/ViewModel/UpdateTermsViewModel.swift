@@ -35,16 +35,16 @@ extension UpdateTermsViewModel: ViewModelType {
 
     func transform(input: Input) -> Output {
         input.prepareData
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.setTermsItemList()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.setTermsItemList()
             }
             .disposed(by: disposeBag)
         
         input.updateTerms
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.updateTerms()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.updateTerms()
             }
             .disposed(by: disposeBag)
 
@@ -57,24 +57,23 @@ extension UpdateTermsViewModel: ViewModelType {
 extension UpdateTermsViewModel {
     private func setTermsItemList() {
         GamebaseAsObservable.queryTerms()
-            .subscribe { [weak self] queryTermsResult in
-                guard let self = self else { return }
+            .subscribe(with: self) { owner, queryTermsResult in
+                owner.queryTermsResult = queryTermsResult
+                owner.termsContentDetails = queryTermsResult.contents
                 
-                self.queryTermsResult = queryTermsResult
-                self.termsContentDetails = queryTermsResult.contents
-                
-                let itemList = self.termsContentDetails
+                let itemList = owner.termsContentDetails
                     .map { contentDetail -> CustomTitleSwitchModel in
                         CustomTitleSwitchModel(title: contentDetail.name, isOn: contentDetail.agreed) { value in
                             contentDetail.agreed = value
                         }
                     }
                 
-                self.termsContentItemList.accept(itemList)
-                self.isLoading.accept(false)
-            } onError: { [weak self] error in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "약관 정보 조회 실패", message: "\(error.localizedDescription)"))
+                owner.termsContentItemList.accept(itemList)
+                owner.isLoading.accept(false)
+            } onError: { owner, error in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "약관 정보 조회 실패",
+                                                 message: "\(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }
@@ -101,10 +100,11 @@ extension UpdateTermsViewModel {
             .do(onNext: { [weak self] in
                 self?.isLoading.accept(false)
             })
-            .subscribe { [weak self] _ in
-                self?.showAlert.accept(AlertInfo(title: "약관 동의 내역 저장 성공"))
-            } onError: { [weak self] error in
-                self?.showAlert.accept(AlertInfo(title: "약관 동의 내역 저장 실패", message: "\(error.localizedDescription)"))
+            .subscribe(with: self) { owner, _ in
+                owner.showAlert.accept(AlertInfo(title: "약관 동의 내역 저장 성공"))
+            } onError: { owner, error in
+                owner.showAlert.accept(AlertInfo(title: "약관 동의 내역 저장 실패",
+                                                 message: "\(error.localizedDescription)"))
             }
             .disposed(by: self.disposeBag)
     }

@@ -81,15 +81,15 @@ extension LoginViewController {
             .disposed(by: disposeBag)
         
         output.routeToHomeView
-            .emit { [weak self] _ in
-                self?.performSegue(withIdentifier: HomeViewController.segueID, sender: nil)
-                self?.disposeBag = DisposeBag()
+            .emit(with: self) { owner, _ in
+                owner.performSegue(withIdentifier: HomeViewController.segueID, sender: nil)
+                owner.disposeBag = DisposeBag()
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit {
-                UIViewController.showAlert(alertInfo: $0)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

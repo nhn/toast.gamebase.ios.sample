@@ -49,22 +49,20 @@ final class PushSettingsViewController: UIViewController {
         
         NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification)
             .asDriver { _ in .never() }
-            .drive(onNext: { [weak self] _ in
-                self?.inputEnterForeground.accept(())
-            })
+            .drive(with: self) { owner, _ in
+                owner.inputEnterForeground.accept(())
+            }
             .disposed(by: disposeBag)
         
         output.isLoading
-            .emit { [weak self] isLoading in
-                guard let self = self else { return }
-                MBProgressHUD.showProgress(isLoading, to: self.view, animated: true)
+            .emit(with: self) { owner, isLoading in
+                MBProgressHUD.showProgress(isLoading, to: owner.view, animated: true)
             }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         output.showAlert
-            .emit { [weak self] alertInfo in
-                guard let self = self else { return }
-                UIViewController.showAlert(above: self, alertInfo: alertInfo)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

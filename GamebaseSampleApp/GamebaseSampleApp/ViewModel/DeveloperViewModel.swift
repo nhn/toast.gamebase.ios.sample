@@ -55,99 +55,99 @@ extension DeveloperViewModel: ViewModelType {
 
     func transform(input: Input) -> Output {
         input.requestTemporaryWithdrawal
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.requestTemporaryWithdrawal()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.requestTemporaryWithdrawal()
             }
             .disposed(by: disposeBag)
         
         input.cancelTemporaryWithdrawal
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.cancelTemporaryWithdrawal()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.cancelTemporaryWithdrawal()
             }
             .disposed(by: disposeBag)
         
         input.activatedPurchases
-            .subscribe { [weak self] _ in
-                self?.routeToReceiptView.accept(.activatedPurchases)
+            .subscribe(with: self) { owner, _ in
+                owner.routeToReceiptView.accept(.activatedPurchases)
             }
             .disposed(by: disposeBag)
         
         input.itemListOfNotConsumed
-            .subscribe { [weak self] _ in
-                self?.routeToReceiptView.accept(.itemListOfNotConsumed)
+            .subscribe(with: self) { owner, _ in
+                owner.routeToReceiptView.accept(.itemListOfNotConsumed)
             }
             .disposed(by: disposeBag)
         
         input.restorePurchase
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.requestRestorePurchase()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.requestRestorePurchase()
             }
             .disposed(by: disposeBag)
         
         input.queryTokenInfo
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.queryTokenInfo()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.queryTokenInfo()
             }
             .disposed(by: disposeBag)
         
         input.pushConfiguration
-            .subscribe { [weak self] _ in
-                self?.pushConfiguration()
+            .subscribe(with: self) { owner, _ in
+                owner.pushConfiguration()
             }
             .disposed(by: disposeBag)        
         
         input.sendLog
-            .subscribe { [weak self] logInfo in
-                self?.sendLog(logInfo: logInfo)
+            .subscribe(with: self) { owner, logInfo in
+                owner.sendLog(logInfo: logInfo)
             }
             .disposed(by: disposeBag)
         
         input.queryTerms
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.queryTerms()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.queryTerms()
             }
             .disposed(by: disposeBag)
         
         input.termsConfiguration
-            .subscribe { [weak self] _ in
-                self?.termsConfiguration()
+            .subscribe(with: self) { owner, _ in
+                owner.termsConfiguration()
             }
             .disposed(by: disposeBag)
         
         input.updateTerms
-            .subscribe { [weak self] _ in
-                self?.updateTerms()
+            .subscribe(with: self) { owner, _ in
+                owner.updateTerms()
             }
             .disposed(by: disposeBag)
 
 
         input.imageNoticeConfiguration
-            .subscribe { [weak self] _ in
-                self?.imageNoticeConfiguration()
+            .subscribe(with: self) { owner, _ in
+                owner.imageNoticeConfiguration()
             }
             .disposed(by: disposeBag)
         
         input.webViewConfiguration
-            .subscribe { [weak self] _ in
-                self?.webViewConfiguration()
+            .subscribe(with: self) { owner, _ in
+                owner.webViewConfiguration()
             }
             .disposed(by: disposeBag)
         
         input.requestContactURL
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(true)
-                self?.requestContactURL()
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(true)
+                owner.requestContactURL()
             }
             .disposed(by: disposeBag)
         
         input.contactConfiguration
-            .subscribe { [weak self] _ in
-                self?.contactConfiguration()
+            .subscribe(with: self) { owner, _ in
+                owner.contactConfiguration()
             }
             .disposed(by: disposeBag)
 
@@ -162,24 +162,27 @@ extension DeveloperViewModel: ViewModelType {
 extension DeveloperViewModel {
     private func requestTemporaryWithdrawal() {
         GamebaseAsObservable.requestTemporaryWithdrawal()
-            .subscribe { [weak self] info in
-                self?.showAlert.accept(AlertInfo(title: "탈퇴 유예 성공", message: "info => \(info.description)"))
-            } onError: { [weak self] error in
-                self?.showAlert.accept(AlertInfo(title: "탈퇴 유예 실패", message: "error => \(error.localizedDescription)"))
-            } onDisposed: { [weak self] in
-                self?.isLoading.accept(false)
+            .subscribe(with: self) { owner, info in
+                owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 성공",
+                                                 message: "info => \(info.description)"))
+            } onError: { owner, error in
+                owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 실패",
+                                                 message: "error => \(error.localizedDescription)"))
+            } onDisposed: { owner in
+                owner.isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
     
     private func cancelTemporaryWithdrawal() {
         GamebaseAsObservable.cancelTemporaryWithdrawal()
-            .subscribe { [weak self] _ in
-                self?.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 성공"))
-            } onError: { [weak self] error in
-                self?.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 실패", message: "error => \(error.localizedDescription)"))
-            } onDisposed: { [weak self] in
-                self?.isLoading.accept(false)
+            .subscribe(with: self) { owner, _ in
+                owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 성공"))
+            } onError: { owner, error in
+                owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 실패",
+                                                 message: "error => \(error.localizedDescription)"))
+            } onDisposed: { owner in
+                owner.isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -189,12 +192,14 @@ extension DeveloperViewModel {
 extension DeveloperViewModel {
     private func requestRestorePurchase() {
         GamebaseAsObservable.requestRestorePurchase()
-            .subscribe { [weak self] _ in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "구매 내역 복원 성공", message: "구매 내역을 복원했습니다."))
-            } onError: { [weak self] error in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "구매 내역 복원 실패", message: "구매 내역 복원에 실패했습니다.\n\n\(error.localizedDescription)"))
+            .subscribe(with: self) { owner, _ in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "구매 내역 복원 성공",
+                                                 message: "구매 내역을 복원했습니다."))
+            } onError: { owner, error in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "구매 내역 복원 실패",
+                                                 message: "구매 내역 복원에 실패했습니다.\n\n\(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }
@@ -204,12 +209,14 @@ extension DeveloperViewModel {
 extension DeveloperViewModel{
     private func queryTokenInfo() {
         GamebaseAsObservable.queryTokenInfo()
-            .subscribe { [weak self] pushTokenInfo in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "푸시 설정 조회 성공", message: "\(pushTokenInfo.prettyJsonString())"))
-            } onError: { [weak self] error in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "푸시 설정 조회 실패", message: "푸시 설정 정보를 가져오지 못했습니다.\n\n\(error.localizedDescription)"))
+            .subscribe(with: self) { owner, pushTokenInfo in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "푸시 설정 조회 성공",
+                                                 message: "\(pushTokenInfo.prettyJsonString())"))
+            } onError: { owner, error in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "푸시 설정 조회 실패",
+                                                 message: "푸시 설정 정보를 가져오지 못했습니다.\n\n\(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }
@@ -241,8 +248,8 @@ extension DeveloperViewModel {
     private func sendLog(logInfo: SendLogInfo) {
         let textFields = [
             AlertTextFieldInfo(placeholder: "Log message"),
-            AlertTextFieldInfo(placeholder: "User defiends key"),
-            AlertTextFieldInfo(placeholder: "User defiends value")
+            AlertTextFieldInfo(placeholder: "User defined key"),
+            AlertTextFieldInfo(placeholder: "User defined value")
         ]
         
         let alertInfo = AlertInfo(title: logInfo.title,
@@ -282,12 +289,14 @@ extension DeveloperViewModel {
 extension DeveloperViewModel {
     private func queryTerms() {
         GamebaseAsObservable.queryTerms()
-            .subscribe { [weak self] queryTermsResult in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "약관 정보 조회 성공", message: "\(queryTermsResult.prettyJsonString())"))
-            } onError: { [weak self] error in
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "약관 정보 조회 실패", message: "약관 정보를 가져오지 못했습니다.\n\n\(error.localizedDescription)"))
+            .subscribe(with: self) { owner, queryTermsResult in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "약관 정보 조회 성공",
+                                                 message: "\(queryTermsResult.prettyJsonString())"))
+            } onError: { owner, error in
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "약관 정보 조회 실패",
+                                                 message: "약관 정보를 가져오지 못했습니다.\n\n\(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }
@@ -435,10 +444,12 @@ extension DeveloperViewModel {
             .do(onNext: { [weak self] _ in
                 self?.isLoading.accept(false)
             })
-            .subscribe { [weak self] contactURL in
-                self?.showAlert.accept(AlertInfo(title: "고객센터 URL", message: "contactURL => \(contactURL)"))
-            } onError: { [weak self] error in
-                self?.showAlert.accept(AlertInfo(title: "고객센터 URL", message: "고객센터 URL을 가져오지 못했습니다.\nerror=> \(error.localizedDescription)"))
+            .subscribe(with: self) { owner, contactURL in
+                owner.showAlert.accept(AlertInfo(title: "고객센터 URL",
+                                                 message: "contactURL => \(contactURL)"))
+            } onError: { owner, error in
+                owner.showAlert.accept(AlertInfo(title: "고객센터 URL",
+                                                 message: "고객센터 URL을 가져오지 못했습니다.\nerror=> \(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }

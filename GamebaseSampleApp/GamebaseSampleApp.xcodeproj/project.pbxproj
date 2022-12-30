@@ -81,12 +81,6 @@
 		D9BF7A7F287572DF0091DE7B /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF7A7E287572DF0091DE7B /* UIApplication+Extension.swift */; };
 		D9C7FE9D28F686E40015BD0B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7FE9C28F686E40015BD0B /* UserManager.swift */; };
 		D9C7FE9F28F6951D0015BD0B /* GamebaseAsObservable+ImageNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7FE9E28F6951D0015BD0B /* GamebaseAsObservable+ImageNotice.swift */; };
-		D9CB3BEF28FAE1A20054D57F /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CB3BEE28FAE1A20054D57F /* NHNCloudPush.xcframework */; };
-		D9CB3BF028FAE1A20054D57F /* NHNCloudPush.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9CB3BEE28FAE1A20054D57F /* NHNCloudPush.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D9CB3BF328FAE1C00054D57F /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CB3BF228FAE1C00054D57F /* NHNCloudCore.xcframework */; };
-		D9CB3BF428FAE1C00054D57F /* NHNCloudCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9CB3BF228FAE1C00054D57F /* NHNCloudCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D9CB3BF628FAE1C40054D57F /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CB3BF528FAE1C40054D57F /* NHNCloudCommon.xcframework */; };
-		D9CB3BF728FAE1C50054D57F /* NHNCloudCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9CB3BF528FAE1C40054D57F /* NHNCloudCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9CC9B7028DAFBED00B25BA9 /* UIAlertAction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC9B6F28DAFBED00B25BA9 /* UIAlertAction+Extension.swift */; };
 		D9CC9B7328DB0CFB00B25BA9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC9B7228DB0CFB00B25BA9 /* AppConstants.swift */; };
 		D9CC9B7928DB678100B25BA9 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC9B7828DB678100B25BA9 /* AlertInfo.swift */; };
@@ -103,6 +97,12 @@
 		D9EB1009286D745D0084CEFE /* CustomSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */; };
 		D9EB100E286EFDAD0084CEFE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */; };
 		D9F2652428C3AE3000D4983E /* ShoppingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F2652328C3AE3000D4983E /* ShoppingCellModel.swift */; };
+		D9F2C523295E826F00D7F333 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F2C520295E826F00D7F333 /* NHNCloudCommon.xcframework */; };
+		D9F2C524295E826F00D7F333 /* NHNCloudCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9F2C520295E826F00D7F333 /* NHNCloudCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9F2C525295E827000D7F333 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F2C521295E826F00D7F333 /* NHNCloudCore.xcframework */; };
+		D9F2C526295E827000D7F333 /* NHNCloudCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9F2C521295E826F00D7F333 /* NHNCloudCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9F2C527295E827000D7F333 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F2C522295E826F00D7F333 /* NHNCloudPush.xcframework */; };
+		D9F2C528295E827000D7F333 /* NHNCloudPush.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9F2C522295E826F00D7F333 /* NHNCloudPush.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9F38083287D0B470005B23D /* GamebaseAsObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F38082287D0B470005B23D /* GamebaseAsObservable.swift */; };
 		D9FC46E428DAEA8400999225 /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC46E328DAEA8400999225 /* DeveloperViewController.swift */; };
 		D9FC46E928DC346700999225 /* DeveloperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC46E828DC346700999225 /* DeveloperViewModel.swift */; };
@@ -149,15 +149,15 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9CB3BF128FAE1A30054D57F /* Embed Frameworks */ = {
+		D9F2C529295E827000D7F333 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D9CB3BF028FAE1A20054D57F /* NHNCloudPush.xcframework in Embed Frameworks */,
-				D9CB3BF728FAE1C50054D57F /* NHNCloudCommon.xcframework in Embed Frameworks */,
-				D9CB3BF428FAE1C00054D57F /* NHNCloudCore.xcframework in Embed Frameworks */,
+				D9F2C524295E826F00D7F333 /* NHNCloudCommon.xcframework in Embed Frameworks */,
+				D9F2C526295E827000D7F333 /* NHNCloudCore.xcframework in Embed Frameworks */,
+				D9F2C528295E827000D7F333 /* NHNCloudPush.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,9 +276,6 @@
 		D9CA41FA28B379100095FE94 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D9CA41FC28B3792A0095FE94 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D9CA41FE28B379350095FE94 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		D9CB3BEE28FAE1A20054D57F /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.0.0/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
-		D9CB3BF228FAE1C00054D57F /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.0.0/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
-		D9CB3BF528FAE1C40054D57F /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.0.0/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
 		D9CC9B6F28DAFBED00B25BA9 /* UIAlertAction+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extension.swift"; sourceTree = "<group>"; };
 		D9CC9B7228DB0CFB00B25BA9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D9CC9B7828DB678100B25BA9 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
@@ -297,6 +294,9 @@
 		D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D9F2652328C3AE3000D4983E /* ShoppingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCellModel.swift; sourceTree = "<group>"; };
+		D9F2C520295E826F00D7F333 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.2.0/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
+		D9F2C521295E826F00D7F333 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.2.0/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
+		D9F2C522295E826F00D7F333 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.2.0/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D9F38082287D0B470005B23D /* GamebaseAsObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamebaseAsObservable.swift; sourceTree = "<group>"; };
 		D9FC46E328DAEA8400999225 /* DeveloperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
 		D9FC46E828DC346700999225 /* DeveloperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperViewModel.swift; sourceTree = "<group>"; };
@@ -310,10 +310,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9CB3BEF28FAE1A20054D57F /* NHNCloudPush.xcframework in Frameworks */,
-				D9CB3BF628FAE1C40054D57F /* NHNCloudCommon.xcframework in Frameworks */,
 				D923EEED28FADF4100F9C032 /* UserNotifications.framework in Frameworks */,
-				D9CB3BF328FAE1C00054D57F /* NHNCloudCore.xcframework in Frameworks */,
+				D9F2C523295E826F00D7F333 /* NHNCloudCommon.xcframework in Frameworks */,
+				D9F2C527295E827000D7F333 /* NHNCloudPush.xcframework in Frameworks */,
+				D9F2C525295E827000D7F333 /* NHNCloudCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +348,9 @@
 		47A950A6402E5E9B7CFD3C1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9CB3BF528FAE1C40054D57F /* NHNCloudCommon.xcframework */,
-				D9CB3BF228FAE1C00054D57F /* NHNCloudCore.xcframework */,
-				D9CB3BEE28FAE1A20054D57F /* NHNCloudPush.xcframework */,
+				D9F2C520295E826F00D7F333 /* NHNCloudCommon.xcframework */,
+				D9F2C521295E826F00D7F333 /* NHNCloudCore.xcframework */,
+				D9F2C522295E826F00D7F333 /* NHNCloudPush.xcframework */,
 				D923EEEC28FADF4100F9C032 /* UserNotifications.framework */,
 				D923EEE828FADF3800F9C032 /* Pods_GamebaseSampleApp.framework */,
 				D9CA41FE28B379350095FE94 /* CoreMedia.framework */,
@@ -635,8 +635,9 @@
 				D923EED828FADEDA00F9C032 /* Sources */,
 				D923EED928FADEDA00F9C032 /* Frameworks */,
 				D923EEDA28FADEDA00F9C032 /* Resources */,
-				D9CB3BF128FAE1A30054D57F /* Embed Frameworks */,
 				D91A5BC728FFB7F100E78163 /* ShellScript */,
+				D9F2C529295E827000D7F333 /* Embed Frameworks */,
+				D9F2C52A295E8A1700D7F333 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -934,6 +935,23 @@
 			showEnvVarsInLog = 0;
 		};
 		D91A5BC728FFB7F100E78163 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then \n    rm -fr Frameworks\nfi\n";
+		};
+		D9F2C52A295E8A1700D7F333 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1331,7 +1349,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.44.0;
+				MARKETING_VERSION = 2.45.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1381,7 +1399,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.44.0;
+				MARKETING_VERSION = 2.45.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

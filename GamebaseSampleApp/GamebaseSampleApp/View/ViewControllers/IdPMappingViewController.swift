@@ -43,15 +43,14 @@ extension IdPMappingViewController {
         let output = viewModel.transform(input: input)
         
         output.showAlert
-            .emit { [weak self] alertInfo in
-                guard let self = self else { return }
-                UIViewController.showAlert(above: self, alertInfo: alertInfo)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
         
         output.routeToRootView
-            .emit { [weak self] _ in
-                self?.navigationController?.popToRootViewController(animated: true)
+            .emit(with: self) { owner, _ in
+                owner.navigationController?.popToRootViewController(animated: true)
             }
             .disposed(by: disposeBag)
     }

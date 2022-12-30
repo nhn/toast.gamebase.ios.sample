@@ -32,10 +32,10 @@ extension ReceiptListViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.getReceiptItemList
-            .subscribe(onNext: { [weak self] type in
-                self?.isLoading.accept(true)
-                self?.requestReceiptList(type: type)
-            })
+            .subscribe(with: self) { owner, type in
+                owner.isLoading.accept(true)
+                owner.requestReceiptList(type: type)
+            }
             .disposed(by: disposeBag)
         
         return Output(isLoading: isLoading.asSignal(),
@@ -57,26 +57,28 @@ extension ReceiptListViewModel {
     
     private func requestActivatedPurchases() {
         GamebaseAsObservable.requestActivatedPurchases()
-            .subscribe { [weak self] purchasableReceiptList in
-                self?.setResult(recepitList: purchasableReceiptList)
-                self?.isLoading.accept(false)
-            } onError: { [weak self] error in
-                self?.showEmptyView.accept(())
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "구독 목록 요청 실패", message: "구독 목록을 불러오지 못했습니다. 다시 시도해주세요."))
+            .subscribe(with: self) { owner, purchasableReceiptList in
+                owner.setResult(recepitList: purchasableReceiptList)
+                owner.isLoading.accept(false)
+            } onError: { owner, error in
+                owner.showEmptyView.accept(())
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "구독 목록 요청 실패",
+                                                 message: "구독 목록을 불러오지 못했습니다. 다시 시도해주세요."))
             }
             .disposed(by: disposeBag)
     }
     
     private func requestItemListOfNotConsumed() {
         GamebaseAsObservable.requestItemListOfNotConsumed()
-            .subscribe { [weak self] purchasableReceiptList in
-                self?.setResult(recepitList: purchasableReceiptList)
-                self?.isLoading.accept(false)
-            } onError: { [weak self] error in
-                self?.showEmptyView.accept(())
-                self?.isLoading.accept(false)
-                self?.showAlert.accept(AlertInfo(title: "미소비 목록 요청 실패", message: "미소비 목록을 불러오지 못했습니다. 다시 시도해주세요."))
+            .subscribe(with: self) { owner, purchasableReceiptList in
+                owner.setResult(recepitList: purchasableReceiptList)
+                owner.isLoading.accept(false)
+            } onError: { owner, error in
+                owner.showEmptyView.accept(())
+                owner.isLoading.accept(false)
+                owner.showAlert.accept(AlertInfo(title: "미소비 목록 요청 실패",
+                                                 message: "미소비 목록을 불러오지 못했습니다. 다시 시도해주세요."))
             }
             .disposed(by: disposeBag)
     }

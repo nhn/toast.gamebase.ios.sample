@@ -12,7 +12,7 @@ extension UIViewController {
                           title: String?,
                           message: String?,
                           preferredStyle: UIAlertController.Style = .alert,
-                          actions: [UIAlertAction] = [UIAlertAction.closeAction],
+                          actions: [UIAlertAction] = [UIAlertAction.closeAction()],
                           textFields: [((UITextField) -> Void)?]? = [],
                           confirmHandler: ((UIAlertController) -> ())? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
@@ -34,7 +34,7 @@ extension UIViewController {
     
     static func showAlert(above viewController: UIViewController = UIApplication.topViewController()!,
                           alertInfo: AlertInfo) {
-        let actions = alertInfo.addCloseAction ? alertInfo.actions + UIAlertAction.closeAction : alertInfo.actions
+        let actions = alertInfo.addCloseAction ? alertInfo.actions + UIAlertAction.closeAction() : alertInfo.actions
         
         let textFields = alertInfo.textFields?
             .compactMap { info -> ((UITextField) -> ()) in

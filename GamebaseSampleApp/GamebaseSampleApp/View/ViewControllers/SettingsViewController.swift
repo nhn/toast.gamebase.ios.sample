@@ -78,21 +78,20 @@ extension SettingsViewController {
         let output = self.viewModel.transform(input: input)
         
         output.routeToRootView
-            .emit { [weak self] _ in
-                self?.navigationController?.popToRootViewController(animated: true)
+            .emit(with: self) { owner, _ in
+                owner.navigationController?.popToRootViewController(animated: true)
             }
             .disposed(by: disposeBag)
         
         output.routeToChildView
-            .emit(onNext: { [weak self] in
-                self?.performSegue(withIdentifier: $0, sender: nil)
-            })
+            .emit(with: self) { owner, segID in
+                owner.performSegue(withIdentifier: segID, sender: nil)
+            }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit { [weak self] alertInfo in
-                guard let self = self else { return }
-                UIViewController.showAlert(above: self, alertInfo: alertInfo)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

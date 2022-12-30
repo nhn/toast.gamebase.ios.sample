@@ -8,5 +8,7 @@
 import UIKit
 
 extension UIAlertAction {
-    static let closeAction = UIAlertAction(title: "닫기", style: .cancel)
+    static func closeAction() -> UIAlertAction {
+        return UIAlertAction(title: "닫기", style: .cancel)
+    }
 }

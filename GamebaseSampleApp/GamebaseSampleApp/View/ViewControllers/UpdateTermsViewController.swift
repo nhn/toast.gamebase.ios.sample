@@ -54,21 +54,20 @@ extension UpdateTermsViewController {
         let output = self.viewModel.transform(input: input)
         
         self.updateTermsButton.rx.tap
-            .subscribe { [weak self] _ in
-                self?.inputUpdateTerms.accept(())
+            .subscribe(with: self) { owner, _ in
+                owner.inputUpdateTerms.accept(())
             }
             .disposed(by: disposeBag)
         
         output.isLoading
-            .emit { [weak self] isLoading in
-                guard let self = self else { return }
-                MBProgressHUD.showProgress(isLoading, to: self.view, animated: true)
+            .emit(with: self) { owner, isLoading in
+                MBProgressHUD.showProgress(isLoading, to: owner.view, animated: true)
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit {
-                UIViewController.showAlert(alertInfo: $0)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

@@ -206,30 +206,30 @@ extension DeveloperViewController {
                                              contactConfiguration: inputContactConfiguration)
         let output = self.viewModel.transform(input: input)
         
-        output.isLoading.emit { [weak self] isLoading in
-            guard let self = self else { return }
-            MBProgressHUD.showProgress(isLoading, to: self.view, animated: true)
-        }
-        .disposed(by: disposeBag)
+        output.isLoading
+            .emit(with: self) { owner, isLoading in
+                MBProgressHUD.showProgress(isLoading, to: owner.view, animated: true)
+            }
+            .disposed(by: disposeBag)
         
         output.routeToChildView
-            .emit { [weak self] in
-                self?.performSegue(withIdentifier: $0, sender: nil)
+            .emit(with: self) { owner, segID in
+                owner.performSegue(withIdentifier: segID, sender: nil)
             }
             .disposed(by: disposeBag)
         
         output.routeToReceiptView
-            .emit { [weak self] type in
+            .emit(with: self) { owner, type in
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let receiptListViewController = storyBoard.instantiateViewController(withIdentifier: ReceiptListViewController.storyboardID) as! ReceiptListViewController
                 receiptListViewController.viewType = type
-                self?.navigationController?.pushViewController(receiptListViewController, animated: true)
+                owner.navigationController?.pushViewController(receiptListViewController, animated: true)
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit {
-                UIViewController.showAlert(alertInfo: $0)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

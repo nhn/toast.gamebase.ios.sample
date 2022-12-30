@@ -39,10 +39,10 @@ extension IntroViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.prepareToPlay
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
+            .delay(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe(with: self) { owner, _ in
                 UserManager.reset()
-                self.initializeGamebase()
+                owner.initializeGamebase()
             }
             .disposed(by: disposeBag)
         
@@ -66,17 +66,16 @@ extension IntroViewModel {
         config.enableBanPopup(true)
 
         GamebaseAsObservable.initialize(configuration: config)
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                if self.checkServiceAvailable() {
-                    self.showTermsView()
+            .subscribe(with: self) { owner, _ in
+                if owner.checkServiceAvailable() {
+                    owner.showTermsView()
                 }
-            } onError: { [weak self] _ in
+            } onError: { owner, _ in
                 let action = UIAlertAction(title: "닫기", style: .default) { _ in
                     UIApplication.terminateApp()
                 }
                 
-                self?.showAlert.accept(AlertInfo(title: "게임을 플레이할 수 없습니다.",
+                owner.showAlert.accept(AlertInfo(title: "게임을 플레이할 수 없습니다.",
                                                  message: "잠시 후 다시 실행해주세요. 문제가 계속될 경우 관리자에게 문의해주세요.",
                                                  addCloseAction: false,
                                                  additionalActions: [action]))
@@ -111,14 +110,14 @@ extension IntroViewModel {
     
     private func showTermsView() {
         GamebaseAsObservable.showTermsView(viewController: viewController)
-            .subscribe { [weak self] dataContainer in
+            .subscribe(with: self) { owner, dataContainer in
                 /* Cache PushTokenInfo */
                 if let gbPushConfiguration = TCGBPushConfiguration.fromDataContainer(dataContainer) {
                     UserDefaultManager.appPushConfiguration = AppPushConfiguration(gbPushConfiguration: gbPushConfiguration)
                 }
                 
-                self?.startLoginForLastLoggedInProviderFlow()
-            } onError: { [weak self] _ in
+                owner.startLoginForLastLoggedInProviderFlow()
+            } onError: { owner, _ in
                 let action = UIAlertAction(title: "닫기", style: .default) { _ in
                     UIApplication.terminateApp()
                 }
@@ -127,7 +126,7 @@ extension IntroViewModel {
                                           message: "앱을 재실행 시켜주세요.",
                                           addCloseAction: false,
                                           additionalActions: [action])
-                self?.showAlert.accept(alertInfo)
+                owner.showAlert.accept(alertInfo)
             }
             .disposed(by: self.disposeBag)
     }
@@ -136,14 +135,10 @@ extension IntroViewModel {
         GamebaseAsObservable.loginForLastLoggedInProvider(viewController: viewController ?? UIApplication.topViewController()!)
             .observe(on: MainScheduler.asyncInstance)
             .retry(when: GamebaseAsObservable.retryHandler)
-            .subscribe { [weak self] authToken in
-                guard let self = self else { return }
-                
+            .subscribe(with: self) { owner, authToken in
                 UserManager.setAuthToken(authToken)
-                self.routeToChildView.accept(HomeViewController.segueID)
-            } onError: { [weak self] error in
-                guard let self = self else { return }
-                
+                owner.routeToChildView.accept(HomeViewController.segueID)
+            } onError: { owner, error in
                 switch error.gamebaseErrorCode() {
                 case .ERROR_BANNED_MEMBER:
                     /*
@@ -151,9 +146,9 @@ extension IntroViewModel {
                      If you set to TCGBConfiguration.enableBanPopup = false, check the ban information and inform the game user why he cannot play the game.
                      https://docs.toast.com/en/Game/Gamebase/en/ios-authentication/#login-flow
                      */
-                    self.routeToChildView.accept(LoginViewController.segueID)
+                    owner.routeToChildView.accept(LoginViewController.segueID)
                 default:
-                    self.startIdPLoginFlow()
+                    owner.startIdPLoginFlow()
                 }
             }
             .disposed(by: disposeBag)
@@ -191,12 +186,9 @@ extension IntroViewModel {
         GamebaseAsObservable.login(idPType, additionalInfo: additionalInfo, viewController: viewController ?? UIApplication.topViewController()!)
             .observe(on: MainScheduler.asyncInstance)
             .retry(when: GamebaseAsObservable.retryHandler)
-            .subscribe { [weak self] _ in
-                guard let self = self else { return }
-                self.routeToChildView.accept(HomeViewController.segueID)
-            } onError: { [weak self] error in
-                guard let self = self else { return }
-                
+            .subscribe(with: self) { owner, _ in
+                owner.routeToChildView.accept(HomeViewController.segueID)
+            } onError: { owner, error in
                 switch error.gamebaseErrorCode() {
                 case .ERROR_BANNED_MEMBER:
                     /*
@@ -206,7 +198,7 @@ extension IntroViewModel {
                      */
                     fallthrough
                 default:
-                    self.routeToChildView.accept(LoginViewController.segueID)
+                    owner.routeToChildView.accept(LoginViewController.segueID)
                 }
             }
             .disposed(by: disposeBag)

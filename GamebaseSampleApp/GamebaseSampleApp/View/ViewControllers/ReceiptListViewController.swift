@@ -60,22 +60,21 @@ extension ReceiptListViewController {
         let output = viewModel.transform(input: input)
         
         output.isLoading
-            .emit { [weak self] isLoading in
-                guard let self = self else { return }
-                MBProgressHUD.showProgress(isLoading, to: self.view, animated: true)
+            .emit(with: self) { owner, isLoading in
+                MBProgressHUD.showProgress(isLoading, to: owner.view, animated: true)
             }
             .disposed(by: disposeBag)
                 
         output.showEmptyView
-            .emit { [weak self] _ in
-                self?.emptyLabel.isHidden = false
-                self?.tableView.isHidden = true
+            .emit(with: self) { owner, _ in
+                owner.emptyLabel.isHidden = false
+                owner.tableView.isHidden = true
             }
             .disposed(by: disposeBag)
         
         output.showAlert
-            .emit { alertInfo in
-                UIViewController.showAlert(alertInfo: alertInfo)
+            .emit(with: self) { owner, alertInfo in
+                UIViewController.showAlert(above: owner, alertInfo: alertInfo)
             }
             .disposed(by: disposeBag)
     }

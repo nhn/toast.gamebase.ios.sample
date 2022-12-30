@@ -37,14 +37,14 @@ extension ContactConfigurationViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.prepareData
-            .subscribe { [weak self] _ in
-                self?.setupContents()
+            .subscribe(with: self) { owner, _ in
+                owner.setupContents()
             }
             .disposed(by: disposeBag)
         
         input.openContact
-            .subscribe { [weak self] _ in
-                self?.openContact()
+            .subscribe(with: self) { owner, _ in
+                owner.openContact()
             }
             .disposed(by: disposeBag)
 
@@ -139,10 +139,12 @@ extension ContactConfigurationViewModel {
     
     private func openContact() {
         GamebaseAsObservable.openContact(configuration: self.contactConfiguration, viewController: self.viewController)
-            .subscribe { [weak self] _ in
-                self?.showAlert.accept(AlertInfo(title: "고객센터", message: "고객센터를 닫았습니다."))
-            } onError: { [weak self] error in
-                self?.showAlert.accept(AlertInfo(title: "고객센터", message: "고객센터를 여는 중 오류가 발생했습니다.\n\n\(error.localizedDescription)"))
+            .subscribe(with: self) { owner, _ in
+                owner.showAlert.accept(AlertInfo(title: "고객센터",
+                                                 message: "고객센터를 닫았습니다."))
+            } onError: { owner, error in
+                owner.showAlert.accept(AlertInfo(title: "고객센터",
+                                                 message: "고객센터를 여는 중 오류가 발생했습니다.\n\n\(error.localizedDescription)"))
             }
             .disposed(by: disposeBag)
     }

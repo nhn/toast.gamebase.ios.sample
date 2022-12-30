@@ -39,14 +39,14 @@ extension LoginViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         input.tryToLogin
-            .subscribe(onNext: { [weak self] idpType in
-                self?.login(idpType, viewController: self?.viewController ?? UIApplication.topViewController()!)
-            })
+            .subscribe(with: self) { owner, idpType in
+                owner.login(idpType, viewController: owner.viewController ?? UIApplication.topViewController()!)
+            }
             .disposed(by: disposeBag)
         
         input.openContact
-            .subscribe { [weak self] _ in
-                self?.openContact(viewController: self?.viewController ?? UIApplication.topViewController()!)
+            .subscribe(with: self) { owner, _ in
+                owner.openContact(viewController: owner.viewController ?? UIApplication.topViewController()!)
             }
             .disposed(by: disposeBag)
 
@@ -74,13 +74,14 @@ extension LoginViewModel {
         GamebaseAsObservable.login(idPType, additionalInfo: additionalInfo, viewController: viewController)
             .observe(on: MainScheduler.asyncInstance)
             .retry(when: GamebaseAsObservable.retryHandler)
-            .subscribe { [weak self] authToken in
-                guard let self = self else { return }
-                
+            .subscribe(with: self) { owner, authToken in
                 UserManager.setAuthToken(authToken)
-                self.routeToHomeView.accept(())
-            } onError: { [weak self] error in
+                owner.routeToHomeView.accept(())
+            } onError: { owner, error in
                 switch error.gamebaseErrorCode() {
+                case .ERROR_AUTH_USER_CANCELED:
+                    owner.showAlert.accept(AlertInfo(title: "로그인 취소",
+                                                     message: "로그인이 취소되었습니다."))
                 case .ERROR_BANNED_MEMBER:
                     /*
                      [NOTICE]
@@ -89,7 +90,8 @@ extension LoginViewModel {
                      */
                     fallthrough
                 default:
-                    self?.showAlert.accept(AlertInfo(title: "로그인 실패", message: "잠시 후 다시 시도해주세요."))
+                    owner.showAlert.accept(AlertInfo(title: "로그인 실패",
+                                                     message: "잠시 후 다시 시도해주세요."))
                 }
             }
             .disposed(by: self.disposeBag)
