@@ -177,7 +177,7 @@ extension IntroViewModel {
          [NOTICE]
          For LINE login, you can register multiple regions to provide services to the console.
          When logging in as an IdP, you must manually enter a region to provide services as an additionalInfo parameter.
-         https://docs.toast.com/en/Game/Gamebase/en/ios-authentication/#login-as-the-latest-login-idp
+         https://docs.toast.com/en/Game/Gamebase/en/ios-authentication/#login-with-idp
          */
         if idPType == kTCGBAuthLine {
             additionalInfo[kTCGBAuthLoginWithCredentialLineChannelRegionKeyname] = "japan"

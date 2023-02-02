@@ -71,7 +71,18 @@ extension IdPMappingViewModel {
     }
     
     private func addMapping(idPType: String) {
-        GamebaseAsObservable.addMapping(idPType, viewController: viewController ?? UIApplication.topViewController()!)
+        var additionalInfo = [String: Any]()
+        /*
+         [NOTICE]
+         For LINE login, you can register multiple regions to provide services to the console.
+         When logging in as an IdP, you must manually enter a region to provide services as an additionalInfo parameter.
+         https://docs.toast.com/en/Game/Gamebase/en/ios-authentication/#login-as-the-latest-login-idp
+         */
+        if idPType == kTCGBAuthLine {
+            additionalInfo[kTCGBAuthLoginWithCredentialLineChannelRegionKeyname] = "japan"
+        }
+        
+        GamebaseAsObservable.addMapping(idPType, additionalInfo: additionalInfo, viewController: viewController ?? UIApplication.topViewController()!)
             .observe(on: MainScheduler.asyncInstance)
             .retry(when: GamebaseAsObservable.retryHandler)
             .subscribe(with: self) { owner, _ in

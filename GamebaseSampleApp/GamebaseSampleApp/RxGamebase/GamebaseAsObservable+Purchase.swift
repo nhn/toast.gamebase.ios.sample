@@ -12,7 +12,9 @@ import RxSwift
 extension GamebaseAsObservable {
     static func requestItemListOfNotConsumed() -> Observable<[TCGBPurchasableReceipt]> {
         return Observable.create { observer -> Disposable in
-            TCGBPurchase.requestItemListOfNotConsumed { purchasableReceiptList, error in
+            let config = TCGBPurchasableConfiguration()
+            config.allStores = false
+            TCGBPurchase.requestItemListOfNotConsumed(configuration: config) { purchasableReceiptList, error in
                 guard TCGBGamebase.isSuccess(error: error), let purchasableReceiptList = purchasableReceiptList else {
                     observer.onError(error!)
                     return
@@ -69,7 +71,9 @@ extension GamebaseAsObservable {
     
     static func requestActivatedPurchases() -> Observable<[TCGBPurchasableReceipt]> {
         return Observable.create { observer -> Disposable in
-            TCGBPurchase.requestActivatedPurchases { purchasableReceiptList, error in
+            let config = TCGBPurchasableConfiguration()
+            config.allStores = false
+            TCGBPurchase.requestActivatedPurchases(configuration: config) { purchasableReceiptList, error in
                 guard TCGBGamebase.isSuccess(error: error), let purchasableReceiptList = purchasableReceiptList else {
                     observer.onError(error!)
                     return
