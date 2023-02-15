@@ -42,14 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         TCGBGamebase.applicationWillEnterForeground(application)
     }
-    
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("application:didFailToRegisterForRemoteNotificationsWithError: \(error)")
-    }
-
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("application:didRegisterForRemoteNotificationsWithDeviceToken: \(deviceToken)")
-    }
 }
 
 extension AppDelegate {
