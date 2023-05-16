@@ -4,7 +4,7 @@ Gamebase SDK 적용 시 기본적인 흐름을 참고할 수 있는 Sample App�
 
 [Gamebase iOS SDK 연동 가이드](https://docs.toast.com/ko/Game/Gamebase/ko/ios-started/)
 
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Gamebase.svg)](https://cocoapods.org/pods/Gamebase)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Gamebase)](https://cocoapods.org/pods/Gamebase)
 
 ## Requirements
 
