@@ -476,16 +476,8 @@ extension DeveloperViewModel {
         return "Display Language가 설정되지 않았습니다."
     }
 
-    func getUsimCountryCode() -> String {
-        return TCGBUtil.usimCountryCode()
-    }
-    
     func getDeviceCountryCode() -> String {
         return TCGBUtil.deviceCountryCode()
-    }
-    
-    func getCountryCode() -> String {
-        return TCGBUtil.countryCode()
     }
 }
 

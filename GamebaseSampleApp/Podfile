@@ -18,7 +18,7 @@ target 'GamebaseSampleApp' do
   pod 'AppAuth', '1.6.2'
 
   # Gamebase
-  $GAMEBASE_SDK_VERSION = '2.51.0'
+  $GAMEBASE_SDK_VERSION = '2.52.0'
   pod 'Gamebase', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthFacebookAdapter', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthGamecenterAdapter', $GAMEBASE_SDK_VERSION

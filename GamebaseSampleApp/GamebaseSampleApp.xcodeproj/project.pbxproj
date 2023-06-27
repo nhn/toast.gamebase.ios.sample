@@ -43,6 +43,12 @@
 		D95E6C7728B60BA6002DEAE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7628B60BA6002DEAE2 /* LoginViewModel.swift */; };
 		D95E6C7928B617E8002DEAE2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7828B617E8002DEAE2 /* ViewModelType.swift */; };
 		D95E6C7B28B69467002DEAE2 /* GamebaseAsObservable+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7A28B69467002DEAE2 /* GamebaseAsObservable+Push.swift */; };
+		D96335032A4AABD900025895 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */; };
+		D96335042A4AABD900025895 /* NHNCloudCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D96335052A4AABD900025895 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335012A4AABD900025895 /* NHNCloudCore.xcframework */; };
+		D96335062A4AABD900025895 /* NHNCloudCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96335012A4AABD900025895 /* NHNCloudCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D96335072A4AABD900025895 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335022A4AABD900025895 /* NHNCloudPush.xcframework */; };
+		D96335082A4AABD900025895 /* NHNCloudPush.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96335022A4AABD900025895 /* NHNCloudPush.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D96395C728F17FAC00E2B322 /* PushConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96395C628F17FAC00E2B322 /* PushConfigurationViewModel.swift */; };
 		D96395C928F17FED00E2B322 /* PushConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */; };
 		D968F3C028BE4B83004FE6A3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968F3BF28BE4B83004FE6A3 /* HomeViewModel.swift */; };
@@ -60,12 +66,6 @@
 		D980DB952893CAFB001D4F5E /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980DB932893CAFB001D4F5E /* ProfileDetailView.swift */; };
 		D980DB962893CAFB001D4F5E /* ProfileDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D980DB942893CAFB001D4F5E /* ProfileDetailView.xib */; };
 		D980DB982893CB1D001D4F5E /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980DB972893CB1D001D4F5E /* UIStackView+Extension.swift */; };
-		D982ED552A25DDFE0033653A /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D982ED522A25DDFE0033653A /* NHNCloudCommon.xcframework */; };
-		D982ED562A25DDFE0033653A /* NHNCloudCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D982ED522A25DDFE0033653A /* NHNCloudCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D982ED572A25DDFE0033653A /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D982ED532A25DDFE0033653A /* NHNCloudCore.xcframework */; };
-		D982ED582A25DDFE0033653A /* NHNCloudCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D982ED532A25DDFE0033653A /* NHNCloudCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D982ED592A25DDFE0033653A /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D982ED542A25DDFE0033653A /* NHNCloudPush.xcframework */; };
-		D982ED5A2A25DDFE0033653A /* NHNCloudPush.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D982ED542A25DDFE0033653A /* NHNCloudPush.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D997870228AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997870128AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift */; };
 		D9979F3F28DDF47400B35D9F /* IdPMappingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9979F3E28DDF47400B35D9F /* IdPMappingInfo.swift */; };
 		D9995C1E28CCF198008131C2 /* MBProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9995C1D28CCF198008131C2 /* MBProgressHUD+Extension.swift */; };
@@ -148,15 +148,15 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D982ED5B2A25DDFE0033653A /* Embed Frameworks */ = {
+		D96335092A4AABD900025895 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D982ED562A25DDFE0033653A /* NHNCloudCommon.xcframework in Embed Frameworks */,
-				D982ED582A25DDFE0033653A /* NHNCloudCore.xcframework in Embed Frameworks */,
-				D982ED5A2A25DDFE0033653A /* NHNCloudPush.xcframework in Embed Frameworks */,
+				D96335042A4AABD900025895 /* NHNCloudCommon.xcframework in Embed Frameworks */,
+				D96335062A4AABD900025895 /* NHNCloudCore.xcframework in Embed Frameworks */,
+				D96335082A4AABD900025895 /* NHNCloudPush.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +211,9 @@
 		D95E6C7628B60BA6002DEAE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D95E6C7828B617E8002DEAE2 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		D95E6C7A28B69467002DEAE2 /* GamebaseAsObservable+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamebaseAsObservable+Push.swift"; sourceTree = "<group>"; };
+		D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.4.0/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
+		D96335012A4AABD900025895 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.4.0/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
+		D96335022A4AABD900025895 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.4.0/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D96395C628F17FAC00E2B322 /* PushConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConfigurationViewModel.swift; sourceTree = "<group>"; };
 		D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConfigurationViewController.swift; sourceTree = "<group>"; };
 		D968F3BF28BE4B83004FE6A3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -313,9 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D923EEED28FADF4100F9C032 /* UserNotifications.framework in Frameworks */,
-				D982ED552A25DDFE0033653A /* NHNCloudCommon.xcframework in Frameworks */,
-				D982ED592A25DDFE0033653A /* NHNCloudPush.xcframework in Frameworks */,
-				D982ED572A25DDFE0033653A /* NHNCloudCore.xcframework in Frameworks */,
+				D96335032A4AABD900025895 /* NHNCloudCommon.xcframework in Frameworks */,
+				D96335072A4AABD900025895 /* NHNCloudPush.xcframework in Frameworks */,
+				D96335052A4AABD900025895 /* NHNCloudCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +352,9 @@
 		47A950A6402E5E9B7CFD3C1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */,
+				D96335012A4AABD900025895 /* NHNCloudCore.xcframework */,
+				D96335022A4AABD900025895 /* NHNCloudPush.xcframework */,
 				D982ED522A25DDFE0033653A /* NHNCloudCommon.xcframework */,
 				D982ED532A25DDFE0033653A /* NHNCloudCore.xcframework */,
 				D982ED542A25DDFE0033653A /* NHNCloudPush.xcframework */,
@@ -640,7 +646,7 @@
 				D923EED928FADEDA00F9C032 /* Frameworks */,
 				D923EEDA28FADEDA00F9C032 /* Resources */,
 				D9F2C52A295E8A1700D7F333 /* ShellScript */,
-				D982ED5B2A25DDFE0033653A /* Embed Frameworks */,
+				D96335092A4AABD900025895 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1122,7 +1128,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.51.0;
+				MARKETING_VERSION = 2.52.0;
 				OTHER_LDFLAGS = (
 					"-lc++",
 					"-ObjC",
@@ -1152,7 +1158,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.51.0;
+				MARKETING_VERSION = 2.52.0;
 				OTHER_LDFLAGS = (
 					"-lc++",
 					"-ObjC",
@@ -1310,7 +1316,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.51.0;
+				MARKETING_VERSION = 2.52.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1360,7 +1366,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.51.0;
+				MARKETING_VERSION = 2.52.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

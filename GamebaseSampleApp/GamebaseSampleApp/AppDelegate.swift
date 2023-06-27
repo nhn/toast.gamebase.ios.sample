@@ -18,15 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerEventHandler()
         return TCGBGamebase.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-    
-    /*
-     For Weibo Login
-     https://docs.toast.com/en/Game/Gamebase/en/ios-initialization/#openurl-event
-     */
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return TCGBGamebase.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
-    
+        
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return TCGBGamebase.application(app, open: url, options: options)
     }
@@ -41,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         TCGBGamebase.applicationWillEnterForeground(application)
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        TCGBGamebase.application(application, continue: userActivity, restorationHandler: restorationHandler)
     }
 }
 

@@ -171,15 +171,7 @@ extension DeveloperViewController {
                 TapActionRow<CustomTapActionCell>(text: "Device Country Code 조회", action: { [weak self] _ in
                     UIViewController.showAlert(title: "Device Country Code",
                                                message: self?.viewModel.getDeviceCountryCode())
-                }),
-                TapActionRow<CustomTapActionCell>(text: "USIM Country Code 조회", action: { [weak self] _ in
-                    UIViewController.showAlert(title: "USIM Country Code",
-                                               message: self?.viewModel.getUsimCountryCode())
-                }),
-                TapActionRow<CustomTapActionCell>(text: "Country Code 조회", action: { [weak self] _ in
-                    UIViewController.showAlert(title: "Country Code",
-                                               message: self?.viewModel.getCountryCode())
-                }),
+                }),                
                 TapActionRow<CustomTapActionCell>(text: "Display Language 조회", action: { [weak self] _ in
                     UIViewController.showAlert(title: "Display Language",
                                                message: self?.viewModel.getDisplayLanguage())
