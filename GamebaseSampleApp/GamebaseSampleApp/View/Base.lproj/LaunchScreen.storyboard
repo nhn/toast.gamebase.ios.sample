@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,27 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbX-qE-DMV">
-                                <rect key="frame" x="55.5" y="163.5" width="303" height="76.5"/>
-                                <string key="text">Gamebase
-Sample Application</string>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nhn" translatesAutoresizingMaskIntoConstraints="NO" id="3UD-8v-YDd">
-                                <rect key="frame" x="0.0" y="340" width="414" height="448"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamebase_nhn" translatesAutoresizingMaskIntoConstraints="NO" id="3UD-8v-YDd">
+                                <rect key="frame" x="16" y="179" width="382" height="538"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NbX-qE-DMV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.45" id="BI1-vj-FcN"/>
-                            <constraint firstItem="3UD-8v-YDd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aZB-LB-NH6"/>
-                            <constraint firstItem="3UD-8v-YDd" firstAttribute="top" secondItem="NbX-qE-DMV" secondAttribute="bottom" constant="100" id="rZw-nd-fhf"/>
-                            <constraint firstItem="NbX-qE-DMV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="swW-vb-vBH"/>
-                            <constraint firstItem="3UD-8v-YDd" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="tFH-DS-72C"/>
-                            <constraint firstItem="3UD-8v-YDd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zPt-Yc-CSB"/>
+                            <constraint firstItem="3UD-8v-YDd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="HN2-II-o4v"/>
+                            <constraint firstAttribute="trailing" secondItem="3UD-8v-YDd" secondAttribute="trailing" constant="16" id="MMO-9Y-TrG"/>
+                            <constraint firstItem="3UD-8v-YDd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZoW-ja-anX"/>
+                            <constraint firstItem="3UD-8v-YDd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wet-uc-kaf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,6 +36,6 @@ Sample Application</string>
         </scene>
     </scenes>
     <resources>
-        <image name="img_nhn" width="800" height="800"/>
+        <image name="gamebase_nhn" width="1598" height="538"/>
     </resources>
 </document>

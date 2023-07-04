@@ -44,11 +44,8 @@
 		D95E6C7928B617E8002DEAE2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7828B617E8002DEAE2 /* ViewModelType.swift */; };
 		D95E6C7B28B69467002DEAE2 /* GamebaseAsObservable+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7A28B69467002DEAE2 /* GamebaseAsObservable+Push.swift */; };
 		D96335032A4AABD900025895 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */; };
-		D96335042A4AABD900025895 /* NHNCloudCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D96335052A4AABD900025895 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335012A4AABD900025895 /* NHNCloudCore.xcframework */; };
-		D96335062A4AABD900025895 /* NHNCloudCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96335012A4AABD900025895 /* NHNCloudCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D96335072A4AABD900025895 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335022A4AABD900025895 /* NHNCloudPush.xcframework */; };
-		D96335082A4AABD900025895 /* NHNCloudPush.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96335022A4AABD900025895 /* NHNCloudPush.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D96395C728F17FAC00E2B322 /* PushConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96395C628F17FAC00E2B322 /* PushConfigurationViewModel.swift */; };
 		D96395C928F17FED00E2B322 /* PushConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */; };
 		D968F3C028BE4B83004FE6A3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968F3BF28BE4B83004FE6A3 /* HomeViewModel.swift */; };
@@ -146,19 +143,6 @@
 				D923EEE328FADEDA00F9C032 /* NotificationService.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D96335092A4AABD900025895 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D96335042A4AABD900025895 /* NHNCloudCommon.xcframework in Embed Frameworks */,
-				D96335062A4AABD900025895 /* NHNCloudCore.xcframework in Embed Frameworks */,
-				D96335082A4AABD900025895 /* NHNCloudPush.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -646,7 +630,6 @@
 				D923EED928FADEDA00F9C032 /* Frameworks */,
 				D923EEDA28FADEDA00F9C032 /* Resources */,
 				D9F2C52A295E8A1700D7F333 /* ShellScript */,
-				D96335092A4AABD900025895 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1116,7 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
@@ -1146,7 +1129,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
@@ -1296,7 +1279,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GamebaseSampleApp/GamebaseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GamebaseSampleApp/Info.plist;
@@ -1346,7 +1329,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GamebaseSampleApp/GamebaseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GamebaseSampleApp/Info.plist;
