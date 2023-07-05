@@ -33,8 +33,7 @@ $ pod install
 3. `GamebaseSampleApp.xcworkspace`를 열어서 실행합니다.
 
 ## Contents
-https://github.nhnent.com/storage/user/3007/files/29d7a913-5693-4822-9ba0-21289b9a4c17
-
+https://github.com/nhn/toast.gamebase.ios.sample/assets/104805857/e16d0274-b5ff-40ba-a752-44641b1dd814
 
 
 | Screenshot | Description | 
