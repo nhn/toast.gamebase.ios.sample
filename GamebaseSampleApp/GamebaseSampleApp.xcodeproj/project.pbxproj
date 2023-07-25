@@ -1099,7 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
@@ -1111,7 +1111,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.52.0;
+				MARKETING_VERSION = 2.53.0;
 				OTHER_LDFLAGS = (
 					"-lc++",
 					"-ObjC",
@@ -1129,7 +1129,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
@@ -1141,7 +1141,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.52.0;
+				MARKETING_VERSION = 2.53.0;
 				OTHER_LDFLAGS = (
 					"-lc++",
 					"-ObjC",
@@ -1279,7 +1279,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GamebaseSampleApp/GamebaseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GamebaseSampleApp/Info.plist;
@@ -1299,7 +1299,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.52.0;
+				MARKETING_VERSION = 2.53.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1329,7 +1329,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GamebaseSampleApp/GamebaseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2UH5C6VK65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GamebaseSampleApp/Info.plist;
@@ -1349,7 +1349,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.52.0;
+				MARKETING_VERSION = 2.53.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
