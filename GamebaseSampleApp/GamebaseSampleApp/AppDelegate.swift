@@ -64,6 +64,24 @@ extension AppDelegate {
                  This event is triggered when the button created by the Rich Message feature is clicked.
                  actionType provides the following: "OPEN_APP", "OPEN_URL", "REPLY", "DISMISS"
                  */
+            } else if $0.category == TCGBGamebaseEventCategory.observerNetwork.rawValue {
+                /*
+                 [NOTICE]
+                 This event is triggered when network status is changed.
+                 */
+                let networkObserverData = TCGBGamebaseEventObserverData.gamebaseEventObserverData(jsonString: $0.data)
+                let errorCode = NetworkStatus(rawValue: Int(networkObserverData.code))
+                
+                switch errorCode {
+                case .NotReachable, .ReachabilityIsNotDefined:
+                    TCGBUtil.showToast(message: "인터넷 연결이 끊겼습니다.", length: .long)
+                case .ReachableViaWWAN:
+                    TCGBUtil.showToast(message: "모바일 네트워크가 연결되었습니다.", length: .long)
+                case .ReachableViaWifi:
+                    TCGBUtil.showToast(message: "WiFi가 연결되었습니다.", length: .long)
+                default:
+                    return
+                }
             }
         }
     }

@@ -159,10 +159,6 @@ extension HomeViewModel {
             } else if $0.category == TCGBGamebaseEventCategory.observerHeartbeat.rawValue {
                 let observerData = TCGBGamebaseEventObserverData.gamebaseEventObserverData(jsonString: $0.data)
                 self?.accountStatusChanged(observerData: observerData)
-            } else if $0.category == TCGBGamebaseEventCategory.observerNetwork.rawValue {
-                let observerData = TCGBGamebaseEventObserverData.gamebaseEventObserverData(jsonString: $0.data)
-                let alertInfo = AlertInfo(title: "네트워크 상태가 변경되었습니다.", message: observerData.message)
-                self?.showAlert.accept(alertInfo)
             } else if $0.category == TCGBGamebaseEventCategory.idPRevoked.rawValue {
                 let idPRevokedData = TCGBGamebaseEventIdPRevokedData.gamebaseEventIdPRevokedData(jsonString: $0.data)
                 self?.idPRevoked(idPRevokedData: idPRevokedData)
