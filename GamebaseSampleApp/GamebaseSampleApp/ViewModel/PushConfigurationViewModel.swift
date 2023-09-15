@@ -66,6 +66,14 @@ extension PushConfigurationViewModel {
         self.pushConfiguration.adAgreementNight = agreement
     }
     
+    func getAlwaysAllowTokenRegistartion() -> Bool {
+        return self.pushConfiguration.alwaysAllowTokenRegistration
+    }
+    
+    func setAlwaysAllowTokenRegistartion(_ alwaysAllowTokenRegistration: Bool) {
+        self.pushConfiguration.alwaysAllowTokenRegistration = alwaysAllowTokenRegistration
+    }
+    
     func getForegroundEnabled() -> Bool {
         return self.notificationOptions.foregroundEnabled
     }

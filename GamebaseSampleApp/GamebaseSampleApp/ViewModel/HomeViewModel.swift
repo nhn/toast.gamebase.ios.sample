@@ -108,6 +108,12 @@ extension HomeViewModel {
                 configuration.pushEnabled = agreement.pushEnabled
                 configuration.adAgreement = agreement.adAgreement
                 configuration.adAgreementNight = agreement.adAgreementNight
+                /*
+                 [NOTICE]
+                 If a user has denied push permission but you still want to register a push token, please set `alwaysAllowTokenRegistration` to `true`.
+                 `alwaysAllowTokenRegistration` to `true`, the app will be able to receive push messages without requiring the user to restart the app, as long as they grant permission for notifications in the device settings.
+                 */
+                configuration.alwaysAllowTokenRegistration = false
                 return configuration
             }
             .subscribe(with: self) { owner, config in

@@ -43,9 +43,6 @@
 		D95E6C7728B60BA6002DEAE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7628B60BA6002DEAE2 /* LoginViewModel.swift */; };
 		D95E6C7928B617E8002DEAE2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7828B617E8002DEAE2 /* ViewModelType.swift */; };
 		D95E6C7B28B69467002DEAE2 /* GamebaseAsObservable+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E6C7A28B69467002DEAE2 /* GamebaseAsObservable+Push.swift */; };
-		D96335032A4AABD900025895 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */; };
-		D96335052A4AABD900025895 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335012A4AABD900025895 /* NHNCloudCore.xcframework */; };
-		D96335072A4AABD900025895 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96335022A4AABD900025895 /* NHNCloudPush.xcframework */; };
 		D96395C728F17FAC00E2B322 /* PushConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96395C628F17FAC00E2B322 /* PushConfigurationViewModel.swift */; };
 		D96395C928F17FED00E2B322 /* PushConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */; };
 		D968F3C028BE4B83004FE6A3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968F3BF28BE4B83004FE6A3 /* HomeViewModel.swift */; };
@@ -66,6 +63,9 @@
 		D997870228AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997870128AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift */; };
 		D9979F3F28DDF47400B35D9F /* IdPMappingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9979F3E28DDF47400B35D9F /* IdPMappingInfo.swift */; };
 		D9995C1E28CCF198008131C2 /* MBProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9995C1D28CCF198008131C2 /* MBProgressHUD+Extension.swift */; };
+		D99B55212AB04D780026AD73 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B551E2AB04D780026AD73 /* NHNCloudCommon.xcframework */; };
+		D99B55232AB04D790026AD73 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B551F2AB04D780026AD73 /* NHNCloudCore.xcframework */; };
+		D99B55252AB04D790026AD73 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B55202AB04D780026AD73 /* NHNCloudPush.xcframework */; };
 		D99C971828950895001962AE /* CustomImageTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C971628950895001962AE /* CustomImageTitleModel.swift */; };
 		D99C971F289508CB001962AE /* CustomImageTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C971D289508CB001962AE /* CustomImageTitleCell.swift */; };
 		D99C9720289508CB001962AE /* CustomImageTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99C971E289508CB001962AE /* CustomImageTitleCell.xib */; };
@@ -165,9 +165,6 @@
 		D92E82672874400E00DC0356 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		D937367428E2FF4000148EC7 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		D937367628E324FE00148EC7 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		D940F48E29DAC7A000299756 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.3.0/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
-		D940F48F29DAC7A000299756 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.3.0/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
-		D940F49029DAC7A000299756 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.3.0/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D940F4A729DACCF500299756 /* NotificationService copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NotificationService copy-Info.plist"; path = "/Users/nhn/Desktop/gamebase.client.ios.sample/GamebaseSampleApp/NotificationService copy-Info.plist"; sourceTree = "<absolute>"; };
 		D942513828EFFC3E0066C944 /* ContactConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConfigurationViewController.swift; sourceTree = "<group>"; };
 		D942513A28EFFEEB0066C944 /* ContactConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactConfigurationViewModel.swift; sourceTree = "<group>"; };
@@ -193,9 +190,6 @@
 		D95E6C7628B60BA6002DEAE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D95E6C7828B617E8002DEAE2 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		D95E6C7A28B69467002DEAE2 /* GamebaseAsObservable+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamebaseAsObservable+Push.swift"; sourceTree = "<group>"; };
-		D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.4.0/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
-		D96335012A4AABD900025895 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.4.0/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
-		D96335022A4AABD900025895 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.4.0/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D96395C628F17FAC00E2B322 /* PushConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConfigurationViewModel.swift; sourceTree = "<group>"; };
 		D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConfigurationViewController.swift; sourceTree = "<group>"; };
 		D968F3BF28BE4B83004FE6A3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -227,12 +221,12 @@
 		D980DB932893CAFB001D4F5E /* ProfileDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
 		D980DB942893CAFB001D4F5E /* ProfileDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileDetailView.xib; sourceTree = "<group>"; };
 		D980DB972893CB1D001D4F5E /* UIStackView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
-		D982ED522A25DDFE0033653A /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.3.1/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
-		D982ED532A25DDFE0033653A /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.3.1/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
-		D982ED542A25DDFE0033653A /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.3.1/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D997870128AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamebaseAsObservable+Auth.swift"; sourceTree = "<group>"; };
 		D9979F3E28DDF47400B35D9F /* IdPMappingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPMappingInfo.swift; sourceTree = "<group>"; };
 		D9995C1D28CCF198008131C2 /* MBProgressHUD+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Extension.swift"; sourceTree = "<group>"; };
+		D99B551E2AB04D780026AD73 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.6.2/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
+		D99B551F2AB04D780026AD73 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.6.2/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
+		D99B55202AB04D780026AD73 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.6.2/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D99C971628950895001962AE /* CustomImageTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageTitleModel.swift; sourceTree = "<group>"; };
 		D99C971D289508CB001962AE /* CustomImageTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageTitleCell.swift; sourceTree = "<group>"; };
 		D99C971E289508CB001962AE /* CustomImageTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomImageTitleCell.xib; sourceTree = "<group>"; };
@@ -300,9 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D923EEED28FADF4100F9C032 /* UserNotifications.framework in Frameworks */,
-				D96335032A4AABD900025895 /* NHNCloudCommon.xcframework in Frameworks */,
-				D96335072A4AABD900025895 /* NHNCloudPush.xcframework in Frameworks */,
-				D96335052A4AABD900025895 /* NHNCloudCore.xcframework in Frameworks */,
+				D99B55212AB04D780026AD73 /* NHNCloudCommon.xcframework in Frameworks */,
+				D99B55252AB04D790026AD73 /* NHNCloudPush.xcframework in Frameworks */,
+				D99B55232AB04D790026AD73 /* NHNCloudCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,15 +330,9 @@
 		47A950A6402E5E9B7CFD3C1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D96335002A4AABD900025895 /* NHNCloudCommon.xcframework */,
-				D96335012A4AABD900025895 /* NHNCloudCore.xcframework */,
-				D96335022A4AABD900025895 /* NHNCloudPush.xcframework */,
-				D982ED522A25DDFE0033653A /* NHNCloudCommon.xcframework */,
-				D982ED532A25DDFE0033653A /* NHNCloudCore.xcframework */,
-				D982ED542A25DDFE0033653A /* NHNCloudPush.xcframework */,
-				D940F48E29DAC7A000299756 /* NHNCloudCommon.xcframework */,
-				D940F48F29DAC7A000299756 /* NHNCloudCore.xcframework */,
-				D940F49029DAC7A000299756 /* NHNCloudPush.xcframework */,
+				D99B551E2AB04D780026AD73 /* NHNCloudCommon.xcframework */,
+				D99B551F2AB04D780026AD73 /* NHNCloudCore.xcframework */,
+				D99B55202AB04D780026AD73 /* NHNCloudPush.xcframework */,
 				D923EEEC28FADF4100F9C032 /* UserNotifications.framework */,
 				D9CA41FE28B379350095FE94 /* CoreMedia.framework */,
 				D9CA41FC28B3792A0095FE94 /* AVFoundation.framework */,
@@ -508,6 +496,31 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		D9AE42F92AA9A3F10088F4F6 /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				D9FC46E328DAEA8400999225 /* DeveloperViewController.swift */,
+				D970B22628E9C00400F70F32 /* WebViewConfigurationViewController.swift */,
+				D9B2B4AC28EC28460029DE71 /* ImageNoticeConfigurationViewController.swift */,
+				D9B3391E28EE704C00A86376 /* TermsConfigurationViewController.swift */,
+				D9B3392128EEABEE00A86376 /* UpdateTermsViewController.swift */,
+				D942513828EFFC3E0066C944 /* ContactConfigurationViewController.swift */,
+				D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */,
+				D9A37A7228FE902000AC1EFE /* ReceiptListViewController.swift */,
+			);
+			path = Developer;
+			sourceTree = "<group>";
+		};
+		D9AE42FA2AA9A4040088F4F6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D9BE8B8528D33D3100A25BF7 /* SettingsViewController.swift */,
+				D9CC9B7A28DB68B600B25BA9 /* IdPMappingViewController.swift */,
+				D9537C1628E0720000213C21 /* PushSettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		D9BF7A7B287572670091DE7B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,17 +559,8 @@
 				D9D461D6286437F300A25A3F /* HomeViewController.swift */,
 				D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */,
 				D955F8C528B62EEC00E4012B /* ShoppingViewController.swift */,
-				D9BE8B8528D33D3100A25BF7 /* SettingsViewController.swift */,
-				D9CC9B7A28DB68B600B25BA9 /* IdPMappingViewController.swift */,
-				D9537C1628E0720000213C21 /* PushSettingsViewController.swift */,
-				D9FC46E328DAEA8400999225 /* DeveloperViewController.swift */,
-				D970B22628E9C00400F70F32 /* WebViewConfigurationViewController.swift */,
-				D9B2B4AC28EC28460029DE71 /* ImageNoticeConfigurationViewController.swift */,
-				D9B3391E28EE704C00A86376 /* TermsConfigurationViewController.swift */,
-				D9B3392128EEABEE00A86376 /* UpdateTermsViewController.swift */,
-				D942513828EFFC3E0066C944 /* ContactConfigurationViewController.swift */,
-				D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */,
-				D9A37A7228FE902000AC1EFE /* ReceiptListViewController.swift */,
+				D9AE42FA2AA9A4040088F4F6 /* Settings */,
+				D9AE42F92AA9A3F10088F4F6 /* Developer */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -741,8 +745,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D9D98C63288A812E00595199 /* GamebaseSampleAppTests */,
 				D96D90F12862E7C5006F4771 /* GamebaseSampleApp */,
+				D9D98C63288A812E00595199 /* GamebaseSampleAppTests */,
 				D9D98C70288A813F00595199 /* GamebaseSampleAppUITests */,
 				D923EEDB28FADEDA00F9C032 /* NotificationService */,
 			);
@@ -1299,7 +1303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.54.0;
+				MARKETING_VERSION = 2.55.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1349,7 +1353,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.54.0;
+				MARKETING_VERSION = 2.55.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
