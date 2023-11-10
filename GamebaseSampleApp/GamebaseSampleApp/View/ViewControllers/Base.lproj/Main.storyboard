@@ -18,17 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamebase_nhn" translatesAutoresizingMaskIntoConstraints="NO" id="AUd-ZM-W2s">
-                                <rect key="frame" x="16" y="179" width="382" height="538"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamebase_nhn" translatesAutoresizingMaskIntoConstraints="NO" id="iWr-Lk-A3O">
+                                <rect key="frame" x="92" y="409.5" width="230" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iWr-Lk-A3O" secondAttribute="height" multiplier="799:269" id="VQ1-7F-nlB"/>
+                                    <constraint firstAttribute="width" constant="230" id="uvU-Yy-4rQ"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BJj-aq-Opc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AUd-ZM-W2s" secondAttribute="trailing" constant="16" id="3QD-Yd-09j"/>
-                            <constraint firstItem="AUd-ZM-W2s" firstAttribute="centerY" secondItem="wJH-P5-24l" secondAttribute="centerY" id="LHi-J5-yKi"/>
-                            <constraint firstItem="AUd-ZM-W2s" firstAttribute="leading" secondItem="wJH-P5-24l" secondAttribute="leading" constant="16" id="ivB-Tj-Z8S"/>
-                            <constraint firstItem="AUd-ZM-W2s" firstAttribute="centerX" secondItem="wJH-P5-24l" secondAttribute="centerX" id="lhY-2r-Gfs"/>
+                            <constraint firstItem="iWr-Lk-A3O" firstAttribute="centerY" secondItem="wJH-P5-24l" secondAttribute="centerY" id="MZb-BW-wzb"/>
+                            <constraint firstItem="iWr-Lk-A3O" firstAttribute="centerX" secondItem="wJH-P5-24l" secondAttribute="centerX" id="eau-2e-Qke"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9WT-Cd-8HM"/>

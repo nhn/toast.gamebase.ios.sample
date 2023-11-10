@@ -16,17 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamebase_nhn" translatesAutoresizingMaskIntoConstraints="NO" id="3UD-8v-YDd">
-                                <rect key="frame" x="16" y="179" width="382" height="538"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamebase_nhn" translatesAutoresizingMaskIntoConstraints="NO" id="yWj-gL-rge">
+                                <rect key="frame" x="92" y="409.5" width="230" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="TCm-fu-kmQ"/>
+                                    <constraint firstAttribute="width" secondItem="yWj-gL-rge" secondAttribute="height" multiplier="799:269" id="n7B-bn-CHV"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3UD-8v-YDd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="HN2-II-o4v"/>
-                            <constraint firstAttribute="trailing" secondItem="3UD-8v-YDd" secondAttribute="trailing" constant="16" id="MMO-9Y-TrG"/>
-                            <constraint firstItem="3UD-8v-YDd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZoW-ja-anX"/>
-                            <constraint firstItem="3UD-8v-YDd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wet-uc-kaf"/>
+                            <constraint firstItem="yWj-gL-rge" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="GMD-Wv-FJL"/>
+                            <constraint firstItem="yWj-gL-rge" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Lse-Zl-rYt"/>
+                            <constraint firstItem="yWj-gL-rge" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Z0n-BJ-mFk"/>
+                            <constraint firstItem="yWj-gL-rge" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vE8-k2-Vt6"/>
                         </constraints>
                     </view>
                 </viewController>
