@@ -33,8 +33,6 @@ $ pod install
 3. `GamebaseSampleApp.xcworkspace`를 열어서 실행합니다.
 
 ## Contents
-https://github.nhnent.com/storage/user/3007/files/29d7a913-5693-4822-9ba0-21289b9a4c17
-
 
 
 | Screenshot | Description | 
