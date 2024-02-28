@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,9 +63,6 @@
 		D997870228AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997870128AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift */; };
 		D9979F3F28DDF47400B35D9F /* IdPMappingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9979F3E28DDF47400B35D9F /* IdPMappingInfo.swift */; };
 		D9995C1E28CCF198008131C2 /* MBProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9995C1D28CCF198008131C2 /* MBProgressHUD+Extension.swift */; };
-		D99B55212AB04D780026AD73 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B551E2AB04D780026AD73 /* NHNCloudCommon.xcframework */; };
-		D99B55232AB04D790026AD73 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B551F2AB04D780026AD73 /* NHNCloudCore.xcframework */; };
-		D99B55252AB04D790026AD73 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B55202AB04D780026AD73 /* NHNCloudPush.xcframework */; };
 		D99C971828950895001962AE /* CustomImageTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C971628950895001962AE /* CustomImageTitleModel.swift */; };
 		D99C971F289508CB001962AE /* CustomImageTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C971D289508CB001962AE /* CustomImageTitleCell.swift */; };
 		D99C9720289508CB001962AE /* CustomImageTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99C971E289508CB001962AE /* CustomImageTitleCell.xib */; };
@@ -98,6 +95,9 @@
 		D9D98C67288A812E00595199 /* GamebaseSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D98C66288A812E00595199 /* GamebaseSampleAppTests.swift */; };
 		D9D98C74288A813F00595199 /* GamebaseSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D98C73288A813F00595199 /* GamebaseSampleAppUITests.swift */; };
 		D9D98C76288A813F00595199 /* GamebaseSampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D98C75288A813F00595199 /* GamebaseSampleAppUITestsLaunchTests.swift */; };
+		D9DE72C82B8DE0BE001994E7 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DE72C52B8DE0BE001994E7 /* NHNCloudCommon.xcframework */; };
+		D9DE72CA2B8DE0BE001994E7 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DE72C62B8DE0BE001994E7 /* NHNCloudCore.xcframework */; };
+		D9DE72CC2B8DE0BE001994E7 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DE72C72B8DE0BE001994E7 /* NHNCloudPush.xcframework */; };
 		D9EB1007286D73E00084CEFE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB1006286D73E00084CEFE /* SideMenuViewController.swift */; };
 		D9EB1009286D745D0084CEFE /* CustomSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */; };
 		D9EB100E286EFDAD0084CEFE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */; };
@@ -224,9 +224,6 @@
 		D997870128AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamebaseAsObservable+Auth.swift"; sourceTree = "<group>"; };
 		D9979F3E28DDF47400B35D9F /* IdPMappingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPMappingInfo.swift; sourceTree = "<group>"; };
 		D9995C1D28CCF198008131C2 /* MBProgressHUD+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Extension.swift"; sourceTree = "<group>"; };
-		D99B551E2AB04D780026AD73 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.6.2/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
-		D99B551F2AB04D780026AD73 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.6.2/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
-		D99B55202AB04D780026AD73 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.6.2/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D99C971628950895001962AE /* CustomImageTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageTitleModel.swift; sourceTree = "<group>"; };
 		D99C971D289508CB001962AE /* CustomImageTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageTitleCell.swift; sourceTree = "<group>"; };
 		D99C971E289508CB001962AE /* CustomImageTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomImageTitleCell.xib; sourceTree = "<group>"; };
@@ -275,6 +272,9 @@
 		D9D98C71288A813F00595199 /* GamebaseSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamebaseSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D98C73288A813F00595199 /* GamebaseSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamebaseSampleAppUITests.swift; sourceTree = "<group>"; };
 		D9D98C75288A813F00595199 /* GamebaseSampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamebaseSampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9DE72C52B8DE0BE001994E7 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.8.0/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
+		D9DE72C62B8DE0BE001994E7 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.8.0/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
+		D9DE72C72B8DE0BE001994E7 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.8.0/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D9EB1006286D73E00084CEFE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -294,9 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D923EEED28FADF4100F9C032 /* UserNotifications.framework in Frameworks */,
-				D99B55212AB04D780026AD73 /* NHNCloudCommon.xcframework in Frameworks */,
-				D99B55252AB04D790026AD73 /* NHNCloudPush.xcframework in Frameworks */,
-				D99B55232AB04D790026AD73 /* NHNCloudCore.xcframework in Frameworks */,
+				D9DE72C82B8DE0BE001994E7 /* NHNCloudCommon.xcframework in Frameworks */,
+				D9DE72CC2B8DE0BE001994E7 /* NHNCloudPush.xcframework in Frameworks */,
+				D9DE72CA2B8DE0BE001994E7 /* NHNCloudCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,9 +330,9 @@
 		47A950A6402E5E9B7CFD3C1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D99B551E2AB04D780026AD73 /* NHNCloudCommon.xcframework */,
-				D99B551F2AB04D780026AD73 /* NHNCloudCore.xcframework */,
-				D99B55202AB04D780026AD73 /* NHNCloudPush.xcframework */,
+				D9DE72C52B8DE0BE001994E7 /* NHNCloudCommon.xcframework */,
+				D9DE72C62B8DE0BE001994E7 /* NHNCloudCore.xcframework */,
+				D9DE72C72B8DE0BE001994E7 /* NHNCloudPush.xcframework */,
 				D923EEEC28FADF4100F9C032 /* UserNotifications.framework */,
 				D9CA41FE28B379350095FE94 /* CoreMedia.framework */,
 				D9CA41FC28B3792A0095FE94 /* AVFoundation.framework */,
@@ -1111,7 +1111,7 @@
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1141,7 +1141,7 @@
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1301,6 +1301,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1351,6 +1352,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
