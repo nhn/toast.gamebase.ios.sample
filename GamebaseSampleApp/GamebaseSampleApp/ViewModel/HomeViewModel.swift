@@ -16,6 +16,7 @@ final class HomeViewModel {
     
     private var disposeBag = DisposeBag()
     private let isLoading = PublishRelay<Bool>()
+    private let testDeviceLabelText = PublishRelay<String>()
     private let showAlert = PublishRelay<AlertInfo>()
     private let routeToRootView = PublishRelay<Void>()
     
@@ -33,11 +34,20 @@ extension HomeViewModel: ViewModelType {
     struct Output {
         let isLoading: Signal<Bool>
         let showAlert: Signal<AlertInfo>
+        let testDeviceLabelText: Signal<String>
         let routeToRootView: Signal<Void>
     }
     
     func transform(input: Input) -> Output {
         input.prepareHome
+            .do(onNext: { [weak self] _ in
+                if TCGBLaunching.isTestDevice {
+                    let matchingTypeString = TCGBLaunching.testDeviceTypes.joined(separator: " | ")
+                    self?.testDeviceLabelText.accept("test device(\(matchingTypeString))")
+                } else {
+                    self?.testDeviceLabelText.accept("")
+                }
+            })
             .do(onNext: { [weak self] _ in
                 self?.isLoading.accept(true)
                 self?.startRegisterPushFlow()
@@ -82,9 +92,12 @@ extension HomeViewModel: ViewModelType {
             }
             .disposed(by: disposeBag)
 
-        return Output(isLoading: isLoading.asSignal(),
-                      showAlert: showAlert.asSignal(),
-                      routeToRootView: routeToRootView.asSignal())
+        return Output(
+            isLoading: isLoading.asSignal(),
+            showAlert: showAlert.asSignal(),
+            testDeviceLabelText: testDeviceLabelText.asSignal(),
+            routeToRootView: routeToRootView.asSignal()
+        )
     }
 }
 

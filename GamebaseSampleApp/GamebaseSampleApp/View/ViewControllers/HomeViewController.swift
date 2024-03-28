@@ -17,6 +17,8 @@ final class HomeViewController: UIViewController {
     static let segueID = "seg\(storyboardID)"
 
     @IBOutlet private weak var sideMenuButton: UIBarButtonItem!
+    @IBOutlet weak var testDeviceLabel: UILabel!
+    
     private lazy var viewModel: HomeViewModel = {
         HomeViewModel(viewController: self)
     }()
@@ -66,6 +68,12 @@ extension HomeViewController {
         output.isLoading
             .emit(with: self) { owner, isLoading in
                 MBProgressHUD.showProgress(isLoading, to: owner.view, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        output.testDeviceLabelText
+            .emit(with: self) { owner, labelText in
+                owner.testDeviceLabel.text = labelText
             }
             .disposed(by: disposeBag)
         

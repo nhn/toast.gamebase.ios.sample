@@ -2,19 +2,19 @@
 
 Gamebase SDK 적용 시 기본적인 흐름을 참고할 수 있는 Sample App입니다. 이 App을 통해 Gamebase SDK를 좀 더 쉽게 적용할 수 있습니다.
 
-[Gamebase iOS SDK 연동 가이드](https://docs.toast.com/ko/Game/Gamebase/ko/ios-started/)
+[Gamebase iOS SDK 연동 가이드](https://docs.nhncloud.com/ko/Game/Gamebase/ko/ios-started/)
 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Gamebase)](https://cocoapods.org/pods/Gamebase)
 
 ## Requirements
 
-* Xcode 14.x
-* iOS 11.0+
+* Xcode 15.x
+* iOS 12.0+
 * Swift 5
 
 ## Gamebase iOS SDK Release Notes
 
-* https://docs.toast.com/ko/Game/Gamebase/ko/release-notes-ios/
+* https://docs.nhncloud.com/ko/Game/Gamebase/ko/release-notes-ios/
 
 ## Start Sample App
 
