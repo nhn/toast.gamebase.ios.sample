@@ -95,6 +95,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>FacebookClientToken</key>
+	<string>012e060867866b205ca253e258ab2991</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>KakaoGameConfiguration</key>

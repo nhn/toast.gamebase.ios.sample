@@ -1297,6 +1297,7 @@
 				INFOPLIST_FILE = GamebaseSampleApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gamebase SampleApp";
 				INFOPLIST_KEY_NSCameraUsageDescription = "고객센터에 사진을 첨부하기 위해 카메라 사용을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "고객센터에 동영상을 첨부하기 위해 마이크 사용을 허용하시겠습니까?";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "고객센터에 사진을 첨부하기 위해 사진첩 접근 권한을 갖는 것에 대해 허용하시겠습니까?";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "고객 맞춤 서비스를 위해 iOS 기기의 광고식별자를 수집합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1312,7 +1313,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.63.0;
+				MARKETING_VERSION = 2.63.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1348,6 +1349,7 @@
 				INFOPLIST_FILE = GamebaseSampleApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gamebase SampleApp";
 				INFOPLIST_KEY_NSCameraUsageDescription = "고객센터에 사진을 첨부하기 위해 카메라 사용을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "고객센터에 동영상을 첨부하기 위해 마이크 사용을 허용하시겠습니까?";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "고객센터에 사진을 첨부하기 위해 사진첩 접근 권한을 갖는 것에 대해 허용하시겠습니까?";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "고객 맞춤 서비스를 위해 iOS 기기의 광고식별자를 수집합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1363,7 +1365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.63.0;
+				MARKETING_VERSION = 2.63.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
