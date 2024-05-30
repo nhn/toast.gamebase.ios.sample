@@ -160,6 +160,8 @@ extension DeveloperViewController {
                 })
             ]),
             Section(title: "ETC", rows: [
+                NavigationRow(text: "OS 버전", detailText: .value1(self.viewModel.osVersion())),
+                
                 TapActionRow<CustomTapActionCell>(text: "IDFA 조회", action: { [weak self] _ in
                     UIViewController.showAlert(title: "IDFA",
                                                message: self?.viewModel.getIDFA())

@@ -461,6 +461,10 @@ extension DeveloperViewModel {
 
 // MARK: - Business logic (ETC)
 extension DeveloperViewModel {
+    func osVersion() -> String {
+        return TCGBUtil.osVersion()
+    }
+    
     func getIDFA() -> String {
         return TCGBUtil.idfa()
     }
