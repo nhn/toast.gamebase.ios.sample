@@ -32,9 +32,12 @@ extension UIViewController {
         }
     }
     
-    static func showAlert(above viewController: UIViewController = UIApplication.topViewController()!,
-                          alertInfo: AlertInfo) {
-        let actions = alertInfo.addCloseAction ? alertInfo.actions + UIAlertAction.closeAction() : alertInfo.actions
+    static func showAlert(above viewController: UIViewController = UIApplication.topViewController()!, alertInfo: AlertInfo) {
+        var actions = alertInfo.addCloseAction ? alertInfo.actions + UIAlertAction.closeAction() : alertInfo.actions
+        
+        if alertInfo.clipboardCopyable, let message = alertInfo.message {
+            actions += UIAlertAction.copyToClipboardAction(message: message)
+        }
         
         let textFields = alertInfo.textFields?
             .compactMap { info -> ((UITextField) -> ()) in

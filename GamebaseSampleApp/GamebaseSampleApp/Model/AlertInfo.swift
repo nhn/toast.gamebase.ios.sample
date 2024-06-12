@@ -14,6 +14,7 @@ struct AlertInfo {
     let addCloseAction: Bool
     let actions: [UIAlertAction]
     let textFields: [AlertTextFieldInfo]?
+    let clipboardCopyable: Bool
     let confirmHandler: ((UIAlertController) -> ())?
 
     init(title: String?,
@@ -22,6 +23,7 @@ struct AlertInfo {
          preferredStyle: UIAlertController.Style = .alert,
          additionalActions: [UIAlertAction] = [],
          textFields: [AlertTextFieldInfo]? = nil,
+         clipboardCopyable: Bool = false,
          confirmHandler: ((UIAlertController) -> ())? = nil) {
         self.title = title
         self.message = message
@@ -29,6 +31,7 @@ struct AlertInfo {
         self.addCloseAction = addCloseAction
         self.actions = additionalActions
         self.textFields = textFields
+        self.clipboardCopyable = clipboardCopyable
         self.confirmHandler = confirmHandler
     }
 }

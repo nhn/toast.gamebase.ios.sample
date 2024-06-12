@@ -44,6 +44,10 @@ extension DeveloperViewModel: ViewModelType {
         let webViewConfiguration: PublishRelay<Void>
         let requestContactURL: PublishRelay<Void>
         let contactConfiguration: PublishRelay<Void>
+        let idfa: PublishRelay<Void>
+        let deviceLanguage: PublishRelay<Void>
+        let deviceCountryCode: PublishRelay<Void>
+        let displayLanguage: PublishRelay<Void>
     }
 
     struct Output {
@@ -151,6 +155,30 @@ extension DeveloperViewModel: ViewModelType {
             }
             .disposed(by: disposeBag)
 
+        input.idfa
+            .subscribe(with: self) { owner, _ in
+                owner.idfa()
+            }
+            .disposed(by: disposeBag)
+        
+        input.deviceLanguage
+            .subscribe(with: self) { owner, _ in
+                owner.deviceLanguage()
+            }
+            .disposed(by: disposeBag)
+        
+        input.deviceCountryCode
+            .subscribe(with: self) { owner, _ in
+                owner.deviceCountryCode()
+            }
+            .disposed(by: disposeBag)
+        
+        input.displayLanguage
+            .subscribe(with: self) { owner, _ in
+                owner.displayLanguage()
+            }
+            .disposed(by: disposeBag)
+        
         return Output(isLoading: isLoading.asSignal(),
                       routeToChildView: routeToChildView.asSignal(),
                       routeToReceiptView: routeToReceiptView.asSignal(),
@@ -212,7 +240,8 @@ extension DeveloperViewModel{
             .subscribe(with: self) { owner, pushTokenInfo in
                 owner.isLoading.accept(false)
                 owner.showAlert.accept(AlertInfo(title: "푸시 설정 조회 성공",
-                                                 message: "\(pushTokenInfo.prettyJsonString())"))
+                                                 message: "\(pushTokenInfo.prettyJsonString())",
+                                                 clipboardCopyable: true))
             } onError: { owner, error in
                 owner.isLoading.accept(false)
                 owner.showAlert.accept(AlertInfo(title: "푸시 설정 조회 실패",
@@ -292,7 +321,8 @@ extension DeveloperViewModel {
             .subscribe(with: self) { owner, queryTermsResult in
                 owner.isLoading.accept(false)
                 owner.showAlert.accept(AlertInfo(title: "약관 정보 조회 성공",
-                                                 message: "\(queryTermsResult.prettyJsonString())"))
+                                                 message: "\(queryTermsResult.prettyJsonString())",
+                                                 clipboardCopyable: true))
             } onError: { owner, error in
                 owner.isLoading.accept(false)
                 owner.showAlert.accept(AlertInfo(title: "약관 정보 조회 실패",
@@ -446,7 +476,8 @@ extension DeveloperViewModel {
             })
             .subscribe(with: self) { owner, contactURL in
                 owner.showAlert.accept(AlertInfo(title: "고객센터 URL",
-                                                 message: "contactURL => \(contactURL)"))
+                                                 message: "\(contactURL)",
+                                                 clipboardCopyable: true))
             } onError: { owner, error in
                 owner.showAlert.accept(AlertInfo(title: "고객센터 URL",
                                                  message: "고객센터 URL을 가져오지 못했습니다.\nerror=> \(error.localizedDescription)"))
@@ -465,23 +496,24 @@ extension DeveloperViewModel {
         return TCGBUtil.osVersion()
     }
     
-    func getIDFA() -> String {
-        return TCGBUtil.idfa()
+    func idfa() {
+        let idfa = TCGBUtil.idfa()
+        self.showAlert.accept(AlertInfo(title: "IDFA", message: idfa, clipboardCopyable: true))
     }
     
-    func getDeviceLanguage() -> String {
-        return TCGBUtil.deviceLanguageCode()
+    func deviceLanguage() {
+        let deviceLanguage = TCGBUtil.deviceLanguageCode()
+        self.showAlert.accept(AlertInfo(title: "Device Language", message: deviceLanguage, clipboardCopyable: true))
     }
     
-    func getDisplayLanguage() -> String {
-        if let displayLanguageCode = TCGBGamebase.displayLanguageCode() {
-            return displayLanguageCode
-        }
-        return "Display Language가 설정되지 않았습니다."
+    func deviceCountryCode() {
+        let deviceCountryCode = TCGBUtil.deviceCountryCode()
+        self.showAlert.accept(AlertInfo(title: "Device Country Code", message: deviceCountryCode, clipboardCopyable: true))
     }
-
-    func getDeviceCountryCode() -> String {
-        return TCGBUtil.deviceCountryCode()
+    
+    func displayLanguage() {
+        let displayLanguageCode = TCGBGamebase.displayLanguageCode() ?? "Display Language가 설정되지 않았습니다."
+        self.showAlert.accept(AlertInfo(title: "Display Language", message: displayLanguageCode, clipboardCopyable: true))
     }
 }
 

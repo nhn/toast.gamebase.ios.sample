@@ -30,6 +30,11 @@ final class DeveloperViewController: QuickTableViewController {
     private let inputWebViewConfiguration = PublishRelay<Void>()
     private let inputRequestContactURL = PublishRelay<Void>()
     private let inputContactConfiguration = PublishRelay<Void>()
+    private let inputIdfa = PublishRelay<Void>()
+    private let inputDeviceLanguage = PublishRelay<Void>()
+    private let inputDeviceCountryCode = PublishRelay<Void>()
+    private let inputDisplayLanguage = PublishRelay<Void>()
+    
     private var disposeBag = DisposeBag()
     
     required init?(coder: NSCoder) {
@@ -163,20 +168,16 @@ extension DeveloperViewController {
                 NavigationRow(text: "OS 버전", detailText: .value1(self.viewModel.osVersion())),
                 
                 TapActionRow<CustomTapActionCell>(text: "IDFA 조회", action: { [weak self] _ in
-                    UIViewController.showAlert(title: "IDFA",
-                                               message: self?.viewModel.getIDFA())
+                    self?.inputIdfa.accept(())
                 }),
                 TapActionRow<CustomTapActionCell>(text: "Device Language 조회", action: { [weak self] _ in
-                    UIViewController.showAlert(title: "Device Language",
-                                               message: self?.viewModel.getDeviceLanguage())
+                    self?.inputDeviceLanguage.accept(())
                 }),
                 TapActionRow<CustomTapActionCell>(text: "Device Country Code 조회", action: { [weak self] _ in
-                    UIViewController.showAlert(title: "Device Country Code",
-                                               message: self?.viewModel.getDeviceCountryCode())
-                }),                
+                    self?.inputDeviceCountryCode.accept(())
+                }),
                 TapActionRow<CustomTapActionCell>(text: "Display Language 조회", action: { [weak self] _ in
-                    UIViewController.showAlert(title: "Display Language",
-                                               message: self?.viewModel.getDisplayLanguage())
+                    self?.inputDisplayLanguage.accept(())
                 }),
             ])
         ]
@@ -197,7 +198,11 @@ extension DeveloperViewController {
                                              imageNoticeConfiguration: inputImageNoticeConfiguration,
                                              webViewConfiguration: inputWebViewConfiguration,
                                              requestContactURL: inputRequestContactURL,
-                                             contactConfiguration: inputContactConfiguration)
+                                             contactConfiguration: inputContactConfiguration,
+                                             idfa: inputIdfa,
+                                             deviceLanguage: inputDeviceLanguage,
+                                             deviceCountryCode: inputDeviceCountryCode,
+                                             displayLanguage: inputDisplayLanguage)
         let output = self.viewModel.transform(input: input)
         
         output.isLoading
