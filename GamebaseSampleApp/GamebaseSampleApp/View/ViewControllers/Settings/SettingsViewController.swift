@@ -66,6 +66,9 @@ extension SettingsViewController {
                 TapActionRow<CustomTapActionCell>(text: "오픈소스 라이선스", action: { [weak self] _ in
                     self?.viewModel.showOpenSourceLicense()
                 }),
+                TapActionRow<CustomTapActionCell>(text: "앱 소스코드", action: { [weak self] _ in
+                    self?.viewModel.showAppSourceCode()
+                }),
             ]),
         ]
     }

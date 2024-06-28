@@ -44,6 +44,10 @@ extension SettingsViewModel {
                                 closeCompletion: nil,
                                 schemeList: nil)
     }
+    
+    func showAppSourceCode() {
+        TCGBWebView.openWebBrowser(urlString: "https://github.com/nhn/toast.gamebase.ios.sample")
+    }
 }
 
 // MARK: - ViewModelType
