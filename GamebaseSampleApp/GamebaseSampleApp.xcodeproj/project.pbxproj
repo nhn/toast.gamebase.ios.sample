@@ -47,9 +47,6 @@
 		D96395C928F17FED00E2B322 /* PushConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */; };
 		D968F3C028BE4B83004FE6A3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968F3BF28BE4B83004FE6A3 /* HomeViewModel.swift */; };
 		D96B977A2BB2CD15007DB370 /* TCGBLaunching+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B97792BB2CD15007DB370 /* TCGBLaunching+Extension.swift */; };
-		D96B977E2BB2CEE8007DB370 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96B977B2BB2CEE8007DB370 /* NHNCloudCommon.xcframework */; };
-		D96B97802BB2CEE8007DB370 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96B977C2BB2CEE8007DB370 /* NHNCloudCore.xcframework */; };
-		D96B97822BB2CEE8007DB370 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96B977D2BB2CEE8007DB370 /* NHNCloudPush.xcframework */; };
 		D96CA5C828D98BF500498FDB /* CustomTapActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CA5C728D98BF500498FDB /* CustomTapActionCell.swift */; };
 		D96D90F62862E7C5006F4771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96D90F52862E7C5006F4771 /* AppDelegate.swift */; };
 		D96D90FD2862E7C5006F4771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96D90FB2862E7C5006F4771 /* Main.storyboard */; };
@@ -99,6 +96,9 @@
 		D9D98C67288A812E00595199 /* GamebaseSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D98C66288A812E00595199 /* GamebaseSampleAppTests.swift */; };
 		D9D98C74288A813F00595199 /* GamebaseSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D98C73288A813F00595199 /* GamebaseSampleAppUITests.swift */; };
 		D9D98C76288A813F00595199 /* GamebaseSampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D98C75288A813F00595199 /* GamebaseSampleAppUITestsLaunchTests.swift */; };
+		D9DEF76F2C7CA27B00D4B563 /* NHNCloudCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DEF76C2C7CA27B00D4B563 /* NHNCloudCommon.xcframework */; };
+		D9DEF7712C7CA27B00D4B563 /* NHNCloudCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DEF76D2C7CA27B00D4B563 /* NHNCloudCore.xcframework */; };
+		D9DEF7732C7CA27B00D4B563 /* NHNCloudPush.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DEF76E2C7CA27B00D4B563 /* NHNCloudPush.xcframework */; };
 		D9EB1007286D73E00084CEFE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB1006286D73E00084CEFE /* SideMenuViewController.swift */; };
 		D9EB1009286D745D0084CEFE /* CustomSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */; };
 		D9EB100E286EFDAD0084CEFE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */; };
@@ -195,9 +195,6 @@
 		D96395C828F17FED00E2B322 /* PushConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConfigurationViewController.swift; sourceTree = "<group>"; };
 		D968F3BF28BE4B83004FE6A3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D96B97792BB2CD15007DB370 /* TCGBLaunching+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TCGBLaunching+Extension.swift"; sourceTree = "<group>"; };
-		D96B977B2BB2CEE8007DB370 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.8.1/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
-		D96B977C2BB2CEE8007DB370 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.8.1/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
-		D96B977D2BB2CEE8007DB370 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.8.1/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D96CA5C728D98BF500498FDB /* CustomTapActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapActionCell.swift; sourceTree = "<group>"; };
 		D96D90F22862E7C5006F4771 /* GamebaseSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamebaseSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96D90F52862E7C5006F4771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -277,6 +274,9 @@
 		D9D98C71288A813F00595199 /* GamebaseSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamebaseSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D98C73288A813F00595199 /* GamebaseSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamebaseSampleAppUITests.swift; sourceTree = "<group>"; };
 		D9D98C75288A813F00595199 /* GamebaseSampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamebaseSampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9DEF76C2C7CA27B00D4B563 /* NHNCloudCommon.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudCommon.xcframework; path = "Pods/NHNCloudCommon/nhncloud.ios.sdk-1.8.3/xcframeworks/NHNCloudCommon.xcframework"; sourceTree = "<group>"; };
+		D9DEF76D2C7CA27B00D4B563 /* NHNCloudCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudCore.xcframework; path = "Pods/NHNCloudCore/nhncloud.ios.sdk-1.8.3/xcframeworks/NHNCloudCore.xcframework"; sourceTree = "<group>"; };
+		D9DEF76E2C7CA27B00D4B563 /* NHNCloudPush.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6D7P2939B7:NHN Cloud Corp."; lastKnownFileType = wrapper.xcframework; name = NHNCloudPush.xcframework; path = "Pods/NHNCloudPush/nhncloud.ios.sdk-1.8.3/xcframeworks/NHNCloudPush.xcframework"; sourceTree = "<group>"; };
 		D9EB1006286D73E00084CEFE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -296,9 +296,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D923EEED28FADF4100F9C032 /* UserNotifications.framework in Frameworks */,
-				D96B977E2BB2CEE8007DB370 /* NHNCloudCommon.xcframework in Frameworks */,
-				D96B97822BB2CEE8007DB370 /* NHNCloudPush.xcframework in Frameworks */,
-				D96B97802BB2CEE8007DB370 /* NHNCloudCore.xcframework in Frameworks */,
+				D9DEF76F2C7CA27B00D4B563 /* NHNCloudCommon.xcframework in Frameworks */,
+				D9DEF7732C7CA27B00D4B563 /* NHNCloudPush.xcframework in Frameworks */,
+				D9DEF7712C7CA27B00D4B563 /* NHNCloudCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,9 +332,9 @@
 		47A950A6402E5E9B7CFD3C1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D96B977B2BB2CEE8007DB370 /* NHNCloudCommon.xcframework */,
-				D96B977C2BB2CEE8007DB370 /* NHNCloudCore.xcframework */,
-				D96B977D2BB2CEE8007DB370 /* NHNCloudPush.xcframework */,
+				D9DEF76C2C7CA27B00D4B563 /* NHNCloudCommon.xcframework */,
+				D9DEF76D2C7CA27B00D4B563 /* NHNCloudCore.xcframework */,
+				D9DEF76E2C7CA27B00D4B563 /* NHNCloudPush.xcframework */,
 				D923EEEC28FADF4100F9C032 /* UserNotifications.framework */,
 				D9CA41FE28B379350095FE94 /* CoreMedia.framework */,
 				D9CA41FC28B3792A0095FE94 /* AVFoundation.framework */,
