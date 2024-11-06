@@ -21,6 +21,7 @@ struct AppConstants {
         Gamebase.kTCGBAuthLine,
         Gamebase.kTCGBAuthNaver,
         Gamebase.kTCGBAuthKakaogame,
+        Gamebase.kTCGBAuthSteam,
     ]
     
     static let retryCount = 3

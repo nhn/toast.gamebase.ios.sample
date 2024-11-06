@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '13.0'
+platform :ios, '14.0'
 
 target 'GamebaseSampleApp' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -18,7 +18,7 @@ target 'GamebaseSampleApp' do
   pod 'QuickTableViewController', '1.3.1'
 
   # Gamebase
-  $GAMEBASE_SDK_VERSION = '2.66.3'
+  $GAMEBASE_SDK_VERSION = '2.67.0'
   pod 'Gamebase', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthFacebookAdapter', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthGamecenterAdapter', $GAMEBASE_SDK_VERSION
@@ -29,6 +29,7 @@ target 'GamebaseSampleApp' do
   pod 'GamebaseAuthLineAdapter', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthAppleidAdapter', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthWeiboAdapter', $GAMEBASE_SDK_VERSION
+  pod 'GamebaseAuthSteamAdapter', $GAMEBASE_SDK_VERSION
   pod 'GamebasePushAdapter', $GAMEBASE_SDK_VERSION
   pod 'GamebasePurchaseIAPAdapter', $GAMEBASE_SDK_VERSION
   

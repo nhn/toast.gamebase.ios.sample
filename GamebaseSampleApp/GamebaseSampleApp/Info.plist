@@ -208,5 +208,7 @@
 	</array>
 	<key>USE_KG_PUSH</key>
 	<false/>
+	<key>LSMinimumSystemVersion</key>
+	<string>12.0</string>
 </dict>
 </plist>
