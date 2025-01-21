@@ -18,7 +18,7 @@ target 'GamebaseSampleApp' do
   pod 'QuickTableViewController', '1.3.1'
 
   # Gamebase
-  $GAMEBASE_SDK_VERSION = '2.68.1'
+  $GAMEBASE_SDK_VERSION = '2.69.0'
   pod 'Gamebase', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthFacebookAdapter', $GAMEBASE_SDK_VERSION
   pod 'GamebaseAuthGamecenterAdapter', $GAMEBASE_SDK_VERSION
