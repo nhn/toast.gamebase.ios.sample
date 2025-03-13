@@ -9,5 +9,6 @@ import UIKit
 
 extension UIColor {
     static let lightLightGray = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.1)
+    static let accentColor = UIColor(named: "AccentColor") ?? .systemBlue
 }
 

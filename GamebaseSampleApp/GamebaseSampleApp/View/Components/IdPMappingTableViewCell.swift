@@ -25,7 +25,7 @@ final class IdPMappingTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
         self.button.setTitle("연동됨", for: .selected)
-        self.button.setBackgroundColor(.systemBlue, for: .selected)
+        self.button.setBackgroundColor(.accentColor, for: .selected)
         
         self.button.setTitle("연동하기", for: .normal)
         self.button.setBackgroundColor(.lightLightGray, for: .normal)

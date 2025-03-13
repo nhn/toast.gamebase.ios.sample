@@ -69,6 +69,12 @@ extension WebViewConfigurationViewController {
                 }),
                 TapActionRow<CustomTapActionCell>(text: "내비게이션 바 색상 설정", action: { [weak self] _ in
                     self?.viewModel.setNavigationBarColor()
+                }),
+                TapActionRow<CustomTapActionCell>(text: "내비게이션 바 타이틀 색상 설정", action: { [weak self] _ in
+                    self?.viewModel.setNavigationBarTitleColor()
+                }),
+                TapActionRow<CustomTapActionCell>(text: "내비게이션 바 아이콘 색상 설정", action: { [weak self] _ in
+                    self?.viewModel.setNavigationBarIconTintColor()
                 })
             ])
         ]

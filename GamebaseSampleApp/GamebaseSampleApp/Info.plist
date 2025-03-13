@@ -75,7 +75,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakaogame777531</string>
+				<string>kakaogame1190160</string>
 			</array>
 		</dict>
 		<dict>
@@ -83,7 +83,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakaodab23ce63d3c4f023572f645983b6307</string>
+				<string>kakao78e7ae7d3d1d68108aa4e4fba202c11e</string>
 			</array>
 		</dict>
 		<dict>
@@ -102,9 +102,9 @@
 	<key>KakaoGameConfiguration</key>
 	<dict>
 		<key>AppId</key>
-		<string>777531</string>
+		<string>1190160</string>
 		<key>AppSecret</key>
-		<string>dab23ce63d3c4f023572f645983b6307</string>
+		<string>78e7ae7d3d1d68108aa4e4fba202c11e</string>
 		<key>AppVersion</key>
 		<string>0.0.1</string>
 		<key>DebugLevel</key>
@@ -126,6 +126,8 @@
 		<string>naversearchthirdlogin</string>
 		<string>naversearchapp</string>
 	</array>
+	<key>LSMinimumSystemVersion</key>
+	<string>12.0</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -208,7 +210,5 @@
 	</array>
 	<key>USE_KG_PUSH</key>
 	<false/>
-	<key>LSMinimumSystemVersion</key>
-	<string>12.0</string>
 </dict>
 </plist>

@@ -36,7 +36,7 @@ extension SettingsViewModel {
     func showOpenSourceLicense() {
         let config = TCGBWebViewConfiguration()
         config.navigationBarTitle = "오픈소스 라이선스"
-        config.navigationBarColor = .systemBlue
+        config.navigationBarColor = .accentColor
         
         TCGBWebView.showWebView(urlString: "https://raw.githubusercontent.com/nhn/toast.gamebase.ios.sample/master/opensource-license.txt",
                                 viewController: viewController,

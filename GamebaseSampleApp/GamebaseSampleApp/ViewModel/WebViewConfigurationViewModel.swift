@@ -51,11 +51,11 @@ extension WebViewConfigurationViewModel {
     
         switch contentMode {
         case .TCGBWebViewContentModeRecommended:
-            self.webViewConfiguration.contentMode = TCGBWebViewContent.modeRecommended.rawValue
+            self.webViewConfiguration.contentMode = .recommended
         case .TCGBWebViewContentModeMobile:
-            self.webViewConfiguration.contentMode = TCGBWebViewContent.modeMobile.rawValue
+            self.webViewConfiguration.contentMode = .mobile
         case .TCGBWebViewContentModeDesktop:
-            self.webViewConfiguration.contentMode = TCGBWebViewContent.modeDesktop.rawValue
+            self.webViewConfiguration.contentMode = .desktop
         }
     }
     
@@ -98,6 +98,58 @@ extension WebViewConfigurationViewModel {
             guard let alpha = alert.textFields?[3].text, !alpha.isEmpty else { return }
             
             self?.webViewConfiguration.navigationBarColor = UIColor(red: CGFloat((red as NSString).floatValue),
+                                                                    green: CGFloat((green as NSString).floatValue),
+                                                                    blue: CGFloat((blue as NSString).floatValue),
+                                                                    alpha: CGFloat((alpha as NSString).floatValue))
+        })
+        self.showAlert.accept(alertInfo)
+    }
+    
+    
+    func setNavigationBarTitleColor() {
+        let textFields = [
+            AlertTextFieldInfo(placeholder: "RED(0 ~ 1.0)"),
+            AlertTextFieldInfo(placeholder: "GREEN(0 ~ 1.0)"),
+            AlertTextFieldInfo(placeholder: "BLUE(0 ~ 1.0)"),
+            AlertTextFieldInfo(placeholder: "ALPHA(0 ~ 1.0)")
+        ]
+        
+        let alertInfo = AlertInfo(title: "내비게이션 바 타이틀 색상 설정",
+                                  textFields: textFields,
+                                  confirmHandler: { [weak self] alert in
+            
+            guard let red = alert.textFields?[0].text, !red.isEmpty else { return }
+            guard let green = alert.textFields?[1].text, !green.isEmpty else { return }
+            guard let blue = alert.textFields?[2].text, !blue.isEmpty else { return }
+            guard let alpha = alert.textFields?[3].text, !alpha.isEmpty else { return }
+            
+            self?.webViewConfiguration.navigationBarTitleColor = UIColor(red: CGFloat((red as NSString).floatValue),
+                                                                    green: CGFloat((green as NSString).floatValue),
+                                                                    blue: CGFloat((blue as NSString).floatValue),
+                                                                    alpha: CGFloat((alpha as NSString).floatValue))
+        })
+        self.showAlert.accept(alertInfo)
+    }
+    
+    
+    func setNavigationBarIconTintColor() {
+        let textFields = [
+            AlertTextFieldInfo(placeholder: "RED(0 ~ 1.0)"),
+            AlertTextFieldInfo(placeholder: "GREEN(0 ~ 1.0)"),
+            AlertTextFieldInfo(placeholder: "BLUE(0 ~ 1.0)"),
+            AlertTextFieldInfo(placeholder: "ALPHA(0 ~ 1.0)")
+        ]
+        
+        let alertInfo = AlertInfo(title: "내비게이션 바 아이콘 색상 설정",
+                                  textFields: textFields,
+                                  confirmHandler: { [weak self] alert in
+            
+            guard let red = alert.textFields?[0].text, !red.isEmpty else { return }
+            guard let green = alert.textFields?[1].text, !green.isEmpty else { return }
+            guard let blue = alert.textFields?[2].text, !blue.isEmpty else { return }
+            guard let alpha = alert.textFields?[3].text, !alpha.isEmpty else { return }
+            
+            self?.webViewConfiguration.navigationBarIconTintColor = UIColor(red: CGFloat((red as NSString).floatValue),
                                                                     green: CGFloat((green as NSString).floatValue),
                                                                     blue: CGFloat((blue as NSString).floatValue),
                                                                     alpha: CGFloat((alpha as NSString).floatValue))

@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamebase_nhn" translatesAutoresizingMaskIntoConstraints="NO" id="iWr-Lk-A3O">
-                                <rect key="frame" x="92" y="409.5" width="230" height="77"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="iWr-Lk-A3O">
+                                <rect key="frame" x="92" y="333" width="230" height="230"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="iWr-Lk-A3O" secondAttribute="height" multiplier="799:269" id="VQ1-7F-nlB"/>
+                                    <constraint firstAttribute="width" secondItem="iWr-Lk-A3O" secondAttribute="height" multiplier="1:1" id="VQ1-7F-nlB"/>
                                     <constraint firstAttribute="width" constant="230" id="uvU-Yy-4rQ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BJj-aq-Opc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="iWr-Lk-A3O" firstAttribute="centerY" secondItem="wJH-P5-24l" secondAttribute="centerY" id="MZb-BW-wzb"/>
                             <constraint firstItem="iWr-Lk-A3O" firstAttribute="centerX" secondItem="wJH-P5-24l" secondAttribute="centerX" id="eau-2e-Qke"/>
@@ -155,8 +155,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="test device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SO-5A-WLT">
-                                <rect key="frame" x="352" y="96" width="57" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SO-5A-WLT">
+                                <rect key="frame" x="352" y="97" width="57" height="12"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -167,6 +167,7 @@
                         <constraints>
                             <constraint firstItem="3SO-5A-WLT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="4B3-b3-wY1"/>
                             <constraint firstItem="pPL-cQ-gFA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="86T-Yu-1Ms"/>
+                            <constraint firstItem="3SO-5A-WLT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="FyQ-us-UQp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3SO-5A-WLT" secondAttribute="trailing" constant="5" id="W2v-HQ-OfM"/>
                             <constraint firstItem="pPL-cQ-gFA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xki-m0-eQD"/>
                         </constraints>
@@ -453,7 +454,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESo-QY-U4j">
                                 <rect key="frame" x="-103.5" y="816" width="621" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="w9J-Dp-3mv"/>
                                 </constraints>
@@ -819,20 +820,17 @@
         <segue reference="eoP-fW-5fN"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="gamebase_nhn" width="1598" height="538"/>
+        <image name="LaunchScreenLogo" width="1024" height="1024"/>
         <image name="profile" width="2001" height="2223"/>
         <image name="sidemenu" width="36" height="36"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.22745098039215686" green="0.53725490196078429" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
