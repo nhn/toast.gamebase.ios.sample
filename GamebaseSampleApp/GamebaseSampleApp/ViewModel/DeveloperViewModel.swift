@@ -351,6 +351,13 @@ extension DeveloperViewModel {
     }
 }
 
+// MARK: - Business logic (GameNotice)
+extension DeveloperViewModel {
+    func showGameNotices() {
+        TCGBGameNotice.openGameNotice(viewController: self.viewController)
+    }
+}
+
 // MARK: - Business logic (WebView)
 extension DeveloperViewModel {
     func showWebView() {

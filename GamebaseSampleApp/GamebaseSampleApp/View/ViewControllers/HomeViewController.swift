@@ -17,17 +17,52 @@ final class HomeViewController: UIViewController {
     static let segueID = "seg\(storyboardID)"
 
     @IBOutlet private weak var sideMenuButton: UIBarButtonItem!
-    @IBOutlet weak var testDeviceLabel: UILabel!
+    
+    private lazy var testDeviceLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemRed
+        label.font = .boldSystemFont(ofSize: 10)
+        return label
+    }()
+    
+    private lazy var subMenuStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 15
+        stackView.alignment = .center
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.addArrangedSubview(self.gameNoticeButton)
+        stackView.addArrangedSubview(self.contactButton)
+        
+        return stackView
+    }()
+    
+    private lazy var gameNoticeButton: UIButton = {
+       let button = HomeSubMenuButton(image: UIImage(named: "gameNotice"), text: "게임공지")
+        return button
+    }()
+    
+    private lazy var contactButton: UIButton = {
+       let button = HomeSubMenuButton(image: UIImage(named: "contact"), text: "고객센터")
+        return button
+    }()
     
     private lazy var viewModel: HomeViewModel = {
         HomeViewModel(viewController: self)
     }()
+    
     private let inputPrepareHome = PublishRelay<Void>()
+    private let inputGameNoticeClicked = PublishRelay<UIViewController>()
+    private let inputContactClicked = PublishRelay<UIViewController>()
+    
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
+        self.setupLayout()
         self.bind()
     }
 }
@@ -52,10 +87,30 @@ extension HomeViewController {
         }
     }
     
+    private func setupLayout() {
+        self.view.addSubview(self.testDeviceLabel)
+        self.view.addSubview(self.subMenuStackView)
+        
+        self.testDeviceLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(5)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(5)
+        }
+            
+        self.subMenuStackView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(15)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-10)
+            make.width.equalTo(60)
+        }
+    }
+    
     private func bind() {
         viewModel.registerEventHandler()
         
-        let input = HomeViewModel.Input(prepareHome: inputPrepareHome)
+        let input = HomeViewModel.Input(
+            prepareHome: inputPrepareHome, 
+            gameNoticeClicked: inputGameNoticeClicked,
+            contactClicked: inputContactClicked
+        )
         let output = viewModel.transform(input: input)
         
         sideMenuButton.rx.tap
@@ -63,6 +118,16 @@ extension HomeViewController {
                 let menu = owner.storyboard?.instantiateViewController(withIdentifier: "leftMenuNavVC") as! SideMenuNavigationController
                 owner.present(menu, animated: true)
             }
+            .disposed(by: disposeBag)
+        
+        gameNoticeButton.rx.tap
+            .compactMap { self }
+            .bind(to: inputGameNoticeClicked)
+            .disposed(by: disposeBag)
+        
+        contactButton.rx.tap
+            .compactMap { self }
+            .bind(to: inputContactClicked)
             .disposed(by: disposeBag)
         
         output.isLoading

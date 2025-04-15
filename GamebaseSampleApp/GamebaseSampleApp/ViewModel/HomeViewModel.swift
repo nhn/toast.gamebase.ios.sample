@@ -29,6 +29,8 @@ final class HomeViewModel {
 extension HomeViewModel: ViewModelType {    
     struct Input {
         let prepareHome: PublishRelay<Void>
+        let gameNoticeClicked: PublishRelay<UIViewController>
+        let contactClicked: PublishRelay<UIViewController>
     }
     
     struct Output {
@@ -92,6 +94,18 @@ extension HomeViewModel: ViewModelType {
             }
             .disposed(by: disposeBag)
 
+        input.gameNoticeClicked
+            .subscribe(with: self) { owner, viewController in
+                owner.openGameNotice(viewController: viewController)
+            }
+            .disposed(by: disposeBag)
+        
+        input.contactClicked
+            .subscribe(with: self) { owner, viewController in
+                owner.openContact(viewController: viewController)
+            }
+            .disposed(by: disposeBag)
+        
         return Output(
             isLoading: isLoading.asSignal(),
             showAlert: showAlert.asSignal(),
@@ -147,10 +161,43 @@ extension HomeViewModel {
         GamebaseAsObservable.cancelTemporaryWithdrawal()
             .subscribe(with: self) { owner, _ in
                 owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 성공"))
-            } onError: { owner, error in
-                owner.showAlert.accept(AlertInfo(title: "탈퇴 유예 철회 실패",
-                                                 message: "잠시 후 'Developer > 탈퇴 유예 철회' 버튼을 눌러서 다시 시도해주세요."))
+            } onError: { owner, _ in
+                owner.showAlert.accept(
+                    AlertInfo(
+                        title: "탈퇴 유예 철회 실패",
+                        message: "잠시 후 'Developer > 탈퇴 유예 철회' 버튼을 눌러서 다시 시도해주세요."
+                    )
+                )
             }
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Sub Menu
+extension HomeViewModel {
+    private func openGameNotice(viewController: UIViewController) {
+        GamebaseAsObservable.openGameNotice(viewController: viewController)
+            .subscribe(with: self, onNext: nil, onError: { owner, error in
+                owner.showAlert.accept(
+                    AlertInfo(
+                        title: "게임공지 실패",
+                        message: "\(error.gamebaseErrorCode())\n\(error.localizedDescription)"
+                    )
+                )
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func openContact(viewController: UIViewController) {
+        GamebaseAsObservable.openContact(viewController: viewController)
+            .subscribe(with: self, onNext: nil, onError: { owner, error in
+                owner.showAlert.accept(
+                    AlertInfo(
+                        title: "고객센터 실패",
+                        message: "\(error.gamebaseErrorCode())\n\(error.localizedDescription)"
+                    )
+                )
+            })
             .disposed(by: disposeBag)
     }
 }

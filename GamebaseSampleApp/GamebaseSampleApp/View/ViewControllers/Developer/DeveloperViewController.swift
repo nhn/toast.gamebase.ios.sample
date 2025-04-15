@@ -123,6 +123,11 @@ extension DeveloperViewController {
                     self?.inputImageNoticeConfiguration.accept(())
                 })
             ]),
+            Section(title: "게임 공지", rows: [
+                TapActionRow<CustomTapActionCell>(text: "게임 공지 보기", action: { [weak self] _ in
+                    self?.viewModel.showGameNotices()
+                }),
+            ]),
             Section(title: "웹뷰", rows: [
                 TapActionRow<CustomTapActionCell>(text: "웹뷰 열기", action: { [weak self] _ in
                     self?.viewModel.showWebView()

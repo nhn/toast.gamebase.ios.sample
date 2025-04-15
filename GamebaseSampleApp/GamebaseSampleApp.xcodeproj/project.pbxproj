@@ -101,6 +101,8 @@
 		D9EB1009286D745D0084CEFE /* CustomSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */; };
 		D9EB100E286EFDAD0084CEFE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */; };
 		D9F2652428C3AE3000D4983E /* ShoppingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F2652328C3AE3000D4983E /* ShoppingCellModel.swift */; };
+		D9F377512DAD01C000A2F0C8 /* HomeSubMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F377502DAD01C000A2F0C8 /* HomeSubMenuButton.swift */; };
+		D9F377532DAD251600A2F0C8 /* GamebaseAsObservable+GameNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F377522DAD251600A2F0C8 /* GamebaseAsObservable+GameNotice.swift */; };
 		D9F38083287D0B470005B23D /* GamebaseAsObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F38082287D0B470005B23D /* GamebaseAsObservable.swift */; };
 		D9FC46E428DAEA8400999225 /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC46E328DAEA8400999225 /* DeveloperViewController.swift */; };
 		D9FC46E928DC346700999225 /* DeveloperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC46E828DC346700999225 /* DeveloperViewModel.swift */; };
@@ -282,6 +284,8 @@
 		D9EB1008286D745D0084CEFE /* CustomSideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D9EB100D286EFDAD0084CEFE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D9F2652328C3AE3000D4983E /* ShoppingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCellModel.swift; sourceTree = "<group>"; };
+		D9F377502DAD01C000A2F0C8 /* HomeSubMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubMenuButton.swift; sourceTree = "<group>"; };
+		D9F377522DAD251600A2F0C8 /* GamebaseAsObservable+GameNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamebaseAsObservable+GameNotice.swift"; sourceTree = "<group>"; };
 		D9F38082287D0B470005B23D /* GamebaseAsObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamebaseAsObservable.swift; sourceTree = "<group>"; };
 		D9F848EA5F47E2C98257F367 /* Pods-GamebaseSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamebaseSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-GamebaseSampleApp/Pods-GamebaseSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D9FC46E328DAEA8400999225 /* DeveloperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
@@ -592,6 +596,7 @@
 			children = (
 				D9F6EE9328FE2ECF00FC2A8F /* Cells */,
 				D94894B52876DE63002DB4DA /* AppPermissionDetailView.swift */,
+				D9F377502DAD01C000A2F0C8 /* HomeSubMenuButton.swift */,
 				D980DB932893CAFB001D4F5E /* ProfileDetailView.swift */,
 				D980DB942893CAFB001D4F5E /* ProfileDetailView.xib */,
 				D955F8BF28B6239F00E4012B /* ShoppingTableViewCell.swift */,
@@ -613,6 +618,7 @@
 				D92933BC28AB2986009CD5A5 /* GamebaseAsObservable+Terms.swift */,
 				D9C7FE9E28F6951D0015BD0B /* GamebaseAsObservable+ImageNotice.swift */,
 				D942513C28F003A10066C944 /* GamebaseAsObservable+Contact.swift */,
+				D9F377522DAD251600A2F0C8 /* GamebaseAsObservable+GameNotice.swift */,
 			);
 			path = RxGamebase;
 			sourceTree = "<group>";
@@ -1057,6 +1063,7 @@
 				D9B3392228EEABEE00A86376 /* UpdateTermsViewController.swift in Sources */,
 				D96395C728F17FAC00E2B322 /* PushConfigurationViewModel.swift in Sources */,
 				D9537C1528E05CBB00213C21 /* SideMenuItem.swift in Sources */,
+				D9F377532DAD251600A2F0C8 /* GamebaseAsObservable+GameNotice.swift in Sources */,
 				D9C7FE9D28F686E40015BD0B /* UserManager.swift in Sources */,
 				D980DB982893CB1D001D4F5E /* UIStackView+Extension.swift in Sources */,
 				D937367728E324FE00148EC7 /* UIButton+Extension.swift in Sources */,
@@ -1074,6 +1081,7 @@
 				D9CC9B8428DB7EA600B25BA9 /* UIColor+Extension.swift in Sources */,
 				D9537C1728E0720000213C21 /* PushSettingsViewController.swift in Sources */,
 				D9B3E4EE28B8A3BB0028E31D /* AppPermissionViewModel.swift in Sources */,
+				D9F377512DAD01C000A2F0C8 /* HomeSubMenuButton.swift in Sources */,
 				D970B22928E9D67100F70F32 /* WebViewConfigurationViewModel.swift in Sources */,
 				D99C971828950895001962AE /* CustomImageTitleModel.swift in Sources */,
 				D9AD33B928DE9E680098445B /* AppPushConfiguration.swift in Sources */,
