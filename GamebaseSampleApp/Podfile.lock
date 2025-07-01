@@ -13,51 +13,51 @@ PODS:
   - FBSDKCoreKit_Basics (17.0.2)
   - FBSDKLoginKit (17.0.2):
     - FBSDKCoreKit (= 17.0.2)
-  - Gamebase (2.72.0):
+  - Gamebase (2.72.1):
     - NHNCloudCommon (= 1.8.5)
     - NHNCloudCore (= 1.8.5)
     - NHNCloudLogger (= 1.8.5)
-  - GamebaseAuthAppleidAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebaseAuthAppleidAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
   - GamebaseAuthExternalLineSDK (5.11.2)
   - GamebaseAuthExternalPaycoIDSDK (1.5.13)
   - GamebaseAuthExternalWeiboSDK (3.4.0)
-  - GamebaseAuthFacebookAdapter (2.72.0):
+  - GamebaseAuthFacebookAdapter (2.72.1):
     - FBAEMKit (= 17.0.2)
     - FBSDKCoreKit (= 17.0.2)
     - FBSDKCoreKit_Basics (= 17.0.2)
     - FBSDKLoginKit (= 17.0.2)
-    - Gamebase (~> 2.72.0)
-  - GamebaseAuthGamecenterAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
-  - GamebaseAuthGoogleAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+    - Gamebase (~> 2.72.1)
+  - GamebaseAuthGamecenterAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
+  - GamebaseAuthGoogleAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - GoogleSignIn (~> 7.1.0)
-  - GamebaseAuthKakaogameAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebaseAuthKakaogameAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - KakaoGameSDK/KakaoGameKakao (= 3.19.0)
-  - GamebaseAuthLineAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebaseAuthLineAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - GamebaseAuthExternalLineSDK (= 5.11.2)
-  - GamebaseAuthNaverAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebaseAuthNaverAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - naveridlogin-sdk-ios (= 4.2.3)
-  - GamebaseAuthPaycoAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebaseAuthPaycoAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - GamebaseAuthExternalPaycoIDSDK (= 1.5.13)
-  - GamebaseAuthSteamAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
-  - GamebaseAuthTwitterAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
-  - GamebaseAuthWeiboAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebaseAuthSteamAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
+  - GamebaseAuthTwitterAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
+  - GamebaseAuthWeiboAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - GamebaseAuthExternalWeiboSDK (= 3.4.0)
-  - GamebasePurchaseIAPAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebasePurchaseIAPAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - NHNCloudCore (= 1.8.5)
     - NHNCloudIAP (= 1.8.5)
-  - GamebasePushAdapter (2.72.0):
-    - Gamebase (~> 2.72.0)
+  - GamebasePushAdapter (2.72.1):
+    - Gamebase (~> 2.72.1)
     - NHNCloudCore (= 1.8.5)
     - NHNCloudPush (= 1.8.5)
   - GoogleSignIn (7.1.0):
@@ -95,20 +95,20 @@ PODS:
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
-  - Gamebase (= 2.72.0)
-  - GamebaseAuthAppleidAdapter (= 2.72.0)
-  - GamebaseAuthFacebookAdapter (= 2.72.0)
-  - GamebaseAuthGamecenterAdapter (= 2.72.0)
-  - GamebaseAuthGoogleAdapter (= 2.72.0)
-  - GamebaseAuthKakaogameAdapter (= 2.72.0)
-  - GamebaseAuthLineAdapter (= 2.72.0)
-  - GamebaseAuthNaverAdapter (= 2.72.0)
-  - GamebaseAuthPaycoAdapter (= 2.72.0)
-  - GamebaseAuthSteamAdapter (= 2.72.0)
-  - GamebaseAuthTwitterAdapter (= 2.72.0)
-  - GamebaseAuthWeiboAdapter (= 2.72.0)
-  - GamebasePurchaseIAPAdapter (= 2.72.0)
-  - GamebasePushAdapter (= 2.72.0)
+  - Gamebase (= 2.72.1)
+  - GamebaseAuthAppleidAdapter (= 2.72.1)
+  - GamebaseAuthFacebookAdapter (= 2.72.1)
+  - GamebaseAuthGamecenterAdapter (= 2.72.1)
+  - GamebaseAuthGoogleAdapter (= 2.72.1)
+  - GamebaseAuthKakaogameAdapter (= 2.72.1)
+  - GamebaseAuthLineAdapter (= 2.72.1)
+  - GamebaseAuthNaverAdapter (= 2.72.1)
+  - GamebaseAuthPaycoAdapter (= 2.72.1)
+  - GamebaseAuthSteamAdapter (= 2.72.1)
+  - GamebaseAuthTwitterAdapter (= 2.72.1)
+  - GamebaseAuthWeiboAdapter (= 2.72.1)
+  - GamebasePurchaseIAPAdapter (= 2.72.1)
+  - GamebasePushAdapter (= 2.72.1)
   - MBProgressHUD (= 1.2.0)
   - NHNCloudCommon
   - NHNCloudCore
@@ -168,23 +168,23 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: a5f384db2e9ee84e98494fed8f983d2bd79accff
   FBSDKCoreKit_Basics: d35c775aaf243a2d731dfae7be3a74b1987285ab
   FBSDKLoginKit: f8ca5f7ab7c4e5b93e729d94975b0db7fcc511ed
-  Gamebase: 3e0bb11f6b81fe6073afaa593d0a4be86e12c296
-  GamebaseAuthAppleidAdapter: 9bc6242d83ab60bd784928ad33356a2c9dae812a
+  Gamebase: eaaec0e6b9569a92c79f57f035cb447a9d690317
+  GamebaseAuthAppleidAdapter: 6fa7c025261272c0b2b6ba3c4eae43a44e1f0b17
   GamebaseAuthExternalLineSDK: 33dedea052e797e598250cac20e47a74bcec3d92
   GamebaseAuthExternalPaycoIDSDK: c20dc90047bcf58de2fbdb88e67f47cfa85eee5f
   GamebaseAuthExternalWeiboSDK: 85aeb9fbd2e0f3be5ca19c2494068ff188132616
-  GamebaseAuthFacebookAdapter: d167ad74832a7876a47584b41f37130bb2a7aeb8
-  GamebaseAuthGamecenterAdapter: d2460d9a06bd0f2d344f812ea3b1d22e9720789e
-  GamebaseAuthGoogleAdapter: 2fe14633091bafae0d7e186383ca12230de74c53
-  GamebaseAuthKakaogameAdapter: 484b6a54746948bb90ea94459741800d4ae76c52
-  GamebaseAuthLineAdapter: f9fc67ff39d28421e256c73d3823d63a26d8ede0
-  GamebaseAuthNaverAdapter: 62e5a271967a87c71122e1231723cf53ed11797c
-  GamebaseAuthPaycoAdapter: 5aa7311a93052146833928896bc4ea2edc1c2d0e
-  GamebaseAuthSteamAdapter: 9d8949852bc0c65550741c1838c4b1a4cba106ac
-  GamebaseAuthTwitterAdapter: 5dded709d6da631350be02d979c3790c02e88077
-  GamebaseAuthWeiboAdapter: 9037f250df939958a31ea5d5ebf66eb37639d42e
-  GamebasePurchaseIAPAdapter: deac202bbb63d89fcc01ce18e87f82668ca6cf4c
-  GamebasePushAdapter: 1f2cc4eb7bc18a2fea875deb8e9a6b5f8a8c5840
+  GamebaseAuthFacebookAdapter: 0c5db74d2275b13a9375bfd31b210a3722af2f19
+  GamebaseAuthGamecenterAdapter: 7d65e12389bdc5cba89075c642da9c333c727d16
+  GamebaseAuthGoogleAdapter: 034ad7d90dedf02fa43123a05b20a4cad3a4a25d
+  GamebaseAuthKakaogameAdapter: 9d90a0651ba80748f66fa5ee1725fda456e6dd4c
+  GamebaseAuthLineAdapter: 6844c95a176c1d15d2c95d2134c1866a34b71d51
+  GamebaseAuthNaverAdapter: 9079bedc14b6a21050a8d5bf92416fd9c1fb19a2
+  GamebaseAuthPaycoAdapter: 90144551175353c1c7f1e0e63e8dbdda3516bb25
+  GamebaseAuthSteamAdapter: 90dbc045eb775bd97d32243836f97692a2f687fa
+  GamebaseAuthTwitterAdapter: f6270e53102738283ff6bcdd1a4ddd8f77b794ae
+  GamebaseAuthWeiboAdapter: f41eeec718d77970cb10c84c777b5af51f55202b
+  GamebasePurchaseIAPAdapter: 9b15139000208c2cea873090304c587eed382c46
+  GamebasePushAdapter: e31396ce401cca738dc3b02c61795cfc0fb763b4
   GoogleSignIn: d4281ab6cf21542b1cfaff85c191f230b399d2db
   GTMAppAuth: f69bd07d68cd3b766125f7e072c45d7340dea0de
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
@@ -204,6 +204,6 @@ SPEC CHECKSUMS:
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 8aa7343b1dfb1a782a924dd63a4d034025ddf5c3
+PODFILE CHECKSUM: b15e249a0500e4130b6878c7022ceee55373e130
 
 COCOAPODS: 1.16.2
