@@ -86,9 +86,10 @@ extension UpdateTermsViewModel {
         
         let contents = self.termsContentDetails
             .map { contentDetail -> TCGBTermsContent in
-                let content = TCGBTermsContent()
-                content.termsContentSeq = contentDetail.termsContentSeq
-                content.agreed = contentDetail.agreed
+                let content = TCGBTermsContent(
+                    termsContentSeq: Int(contentDetail.termsContentSeq),
+                    agreed: contentDetail.agreed
+                )
                 return content
             }
         
