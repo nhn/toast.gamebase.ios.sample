@@ -362,7 +362,7 @@ extension DeveloperViewModel {
 extension DeveloperViewModel {
     func showWebView() {
         let textFields = [
-            AlertTextFieldInfo(defaultText: "https://gameplatform.nhncloud.com/", placeholder: "URL 입력")
+            AlertTextFieldInfo(defaultText: "https://www.nhncloud.com/kr/service/game/gamebase", placeholder: "URL 입력")
         ]
         
         let alertInfo = AlertInfo(title: "웹뷰 열기",
@@ -381,7 +381,7 @@ extension DeveloperViewModel {
     
     func openWebBrowser() {
         let textFields = [
-            AlertTextFieldInfo(defaultText: "https://gameplatform.nhncloud.com/", placeholder: "URL 입력")
+            AlertTextFieldInfo(defaultText: "https://www.nhncloud.com/kr/service/game/gamebase", placeholder: "URL 입력")
         ]
         
         let alertInfo = AlertInfo(title: "외부 브라우저 열기",

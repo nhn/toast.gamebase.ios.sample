@@ -162,7 +162,7 @@ extension WebViewConfigurationViewModel {
 extension WebViewConfigurationViewModel {
     private func showWebView() {
         let textFields = [
-            AlertTextFieldInfo(defaultText: "https://gameplatform.nhncloud.com/", placeholder: "URL 입력")
+            AlertTextFieldInfo(defaultText: "https://www.nhncloud.com/kr/service/game/gamebase", placeholder: "URL 입력")
         ]
         
         let alertInfo = AlertInfo(title: "웹뷰 열기",
