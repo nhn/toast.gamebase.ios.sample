@@ -8,8 +8,8 @@ Gamebase SDK 적용 시 기본적인 흐름을 참고할 수 있는 Sample App�
 
 ## Requirements
 
-* Xcode 15.x
-* iOS 12.0+
+* Xcode 16.x
+* iOS 15.0+
 * Swift 5
 
 ## Gamebase iOS SDK Release Notes
