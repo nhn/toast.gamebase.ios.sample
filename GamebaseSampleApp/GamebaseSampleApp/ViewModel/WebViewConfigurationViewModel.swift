@@ -80,6 +80,19 @@ extension WebViewConfigurationViewModel {
         self.showAlert.accept(alertInfo)
     }
     
+    func setNavigationBarHeight() {
+        let textFields = [
+            AlertTextFieldInfo(placeholder: "내비게이션 바 높이", keyboardType: .numberPad)
+        ]
+        let alertInfo = AlertInfo(title: "내비게이션 바 높이 설정",
+                                  textFields: textFields,
+                                  confirmHandler: { [weak self] alert in
+            guard let heightString = alert.textFields?[0].text, !heightString.isEmpty else { return }
+            self?.webViewConfiguration.navigationBarHeight = CGFloat((heightString as NSString).floatValue)
+        })
+        self.showAlert.accept(alertInfo)
+    }
+
     func setNavigationBarColor() {
         let textFields = [
             AlertTextFieldInfo(placeholder: "RED(0 ~ 1.0)"),

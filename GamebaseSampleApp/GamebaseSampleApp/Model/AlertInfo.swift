@@ -39,9 +39,11 @@ struct AlertInfo {
 struct AlertTextFieldInfo {
     let defaultText: String?
     let placeholder: String?
-    
-    init(defaultText: String? = nil, placeholder: String? = nil) {
+    let keyboardType: UIKeyboardType
+
+    init(defaultText: String? = nil, placeholder: String? = nil, keyboardType: UIKeyboardType = .default) {
         self.defaultText = defaultText
         self.placeholder = placeholder
+        self.keyboardType = keyboardType
     }
 }

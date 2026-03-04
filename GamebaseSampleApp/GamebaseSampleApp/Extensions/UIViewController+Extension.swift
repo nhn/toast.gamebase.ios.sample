@@ -44,6 +44,7 @@ extension UIViewController {
                 return {
                     $0.text = info.defaultText
                     $0.placeholder = info.placeholder
+                    $0.keyboardType = info.keyboardType
                     $0.clearButtonMode = .always
                 }
             }
