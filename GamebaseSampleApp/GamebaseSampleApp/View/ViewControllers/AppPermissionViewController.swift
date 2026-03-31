@@ -52,10 +52,7 @@ final class AppPermissionViewController: UIViewController {
 extension AppPermissionViewController {
     private func setupLayout() {
         self.modalPresentationStyle = .fullScreen
-        
-        if #available(iOS 13.0, *) {
-            self.isModalInPresentation = true
-        }
+        self.isModalInPresentation = true
         
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)

@@ -22,11 +22,7 @@ final class SettingsViewController: QuickTableViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        if #available(iOS 13.0, *) {
-            self.tableView = UITableView(frame: .zero, style: .insetGrouped)
-        } else {
-            self.tableView = UITableView(frame: .zero, style: .grouped)
-        }
+        self.tableView = UITableView(frame: .zero, style: .insetGrouped)
     }
     
     override func viewDidLoad() {

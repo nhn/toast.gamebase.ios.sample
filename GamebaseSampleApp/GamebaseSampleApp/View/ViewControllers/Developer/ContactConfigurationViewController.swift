@@ -37,15 +37,10 @@ extension ContactConfigurationViewController {
     private func setupTableView() {
         self.viewModel.contactConfigurationItemList
             .bind(to:tableView.rx.items(cellIdentifier: "ContactConfigurationTableViewCellID")) { _, item, cell in
-                if #available(iOS 14.0, *) {
-                    var content = cell.defaultContentConfiguration()
-                    content.text = item.title
-                    content.secondaryText = item.subTitle
-                    cell.contentConfiguration = content
-                } else {
-                    cell.textLabel?.text = item.title
-                    cell.detailTextLabel?.text = item.subTitle
-                }
+                var content = cell.defaultContentConfiguration()
+                content.text = item.title
+                content.secondaryText = item.subTitle
+                cell.contentConfiguration = content
             }
             .disposed(by: disposeBag)
     }

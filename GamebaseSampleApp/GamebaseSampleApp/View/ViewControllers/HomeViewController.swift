@@ -72,19 +72,13 @@ extension HomeViewController {
     private func setupNavigationBar() {
         navigationController?.isNavigationBarHidden = false
         
-        if #available(iOS 15.0, *) {
-            let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.configureWithOpaqueBackground()
-            navigationBarAppearance.backgroundColor = .accentColor
-            navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-            navigationController?.navigationBar.standardAppearance = navigationBarAppearance
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
-            navigationController?.navigationBar.tintColor = .white
-        } else {
-            navigationController?.navigationBar.barTintColor = .accentColor
-            navigationController?.navigationBar.tintColor = .white
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        }
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.backgroundColor = .accentColor
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationController?.navigationBar.tintColor = .white
     }
     
     private func setupLayout() {

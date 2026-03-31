@@ -44,13 +44,9 @@ extension ReceiptListViewController {
     private func setupTableView() {
         self.viewModel.receiptItemList
             .bind(to:tableView.rx.items(cellIdentifier: "ReceiptListTableViewCellID")) { _, element, cell in
-                if #available(iOS 14.0, *) {
-                    var content = cell.defaultContentConfiguration()
-                    content.text = element
-                    cell.contentConfiguration = content
-                } else {
-                    cell.textLabel?.text = element
-                }
+                var content = cell.defaultContentConfiguration()
+                content.text = element
+                cell.contentConfiguration = content
             }
             .disposed(by: disposeBag)
     }

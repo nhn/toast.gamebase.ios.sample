@@ -60,7 +60,6 @@
 		D97600F828BBA5DF008D89C8 /* GamebaseAsObservable+Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97600F728BBA5DF008D89C8 /* GamebaseAsObservable+Purchase.swift */; };
 		D97B26D12874440D00DA6614 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97B26D02874440D00DA6614 /* LoginViewController.swift */; };
 		D980DB952893CAFB001D4F5E /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980DB932893CAFB001D4F5E /* ProfileDetailView.swift */; };
-		D980DB962893CAFB001D4F5E /* ProfileDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D980DB942893CAFB001D4F5E /* ProfileDetailView.xib */; };
 		D980DB982893CB1D001D4F5E /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D980DB972893CB1D001D4F5E /* UIStackView+Extension.swift */; };
 		D997870228AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997870128AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift */; };
 		D9979F3F28DDF47400B35D9F /* IdPMappingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9979F3E28DDF47400B35D9F /* IdPMappingInfo.swift */; };
@@ -224,7 +223,6 @@
 		D97600F728BBA5DF008D89C8 /* GamebaseAsObservable+Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamebaseAsObservable+Purchase.swift"; sourceTree = "<group>"; };
 		D97B26D02874440D00DA6614 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D980DB932893CAFB001D4F5E /* ProfileDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
-		D980DB942893CAFB001D4F5E /* ProfileDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileDetailView.xib; sourceTree = "<group>"; };
 		D980DB972893CB1D001D4F5E /* UIStackView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		D997870128AC84CB00AFDEA9 /* GamebaseAsObservable+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GamebaseAsObservable+Auth.swift"; sourceTree = "<group>"; };
 		D9979F3E28DDF47400B35D9F /* IdPMappingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPMappingInfo.swift; sourceTree = "<group>"; };
@@ -598,7 +596,6 @@
 				D94894B52876DE63002DB4DA /* AppPermissionDetailView.swift */,
 				D9F377502DAD01C000A2F0C8 /* HomeSubMenuButton.swift */,
 				D980DB932893CAFB001D4F5E /* ProfileDetailView.swift */,
-				D980DB942893CAFB001D4F5E /* ProfileDetailView.xib */,
 				D955F8BF28B6239F00E4012B /* ShoppingTableViewCell.swift */,
 				D955F8C028B6239F00E4012B /* ShoppingTableViewCell.xib */,
 				D96CA5C728D98BF500498FDB /* CustomTapActionCell.swift */,
@@ -782,7 +779,6 @@
 				D96D91022862E7C6006F4771 /* LaunchScreen.storyboard in Resources */,
 				D9537C1B28E08E5200213C21 /* CustomTitleSwitchCell.xib in Resources */,
 				D99C9720289508CB001962AE /* CustomImageTitleCell.xib in Resources */,
-				D980DB962893CAFB001D4F5E /* ProfileDetailView.xib in Resources */,
 				D96D90FF2862E7C6006F4771 /* Assets.xcassets in Resources */,
 				D96D90FD2862E7C5006F4771 /* Main.storyboard in Resources */,
 				D955F8C228B6239F00E4012B /* ShoppingTableViewCell.xib in Resources */,

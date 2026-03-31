@@ -69,13 +69,13 @@ extension ProfileViewController {
     }
     
     private func setupContents() {
-        let profile = viewModel.getProfile()
-        
-        stackView.addArrangedSubviews([
-            ProfileDetailView(title: "Gamebase UserID", content: profile.userID ?? ""),
-            ProfileDetailView(title: "Gamebase AccessToken", content: profile.accessToken ?? ""),
-            ProfileDetailView(title: "Last LoggedIn Provider", content: profile.lastLoggedInProvider ?? ""),
-            ProfileDetailView(title: "Auth Mapping List", contents: profile.authMappingList ?? [])
-        ])
+        let views = viewModel.profileItems.map { item in
+            ProfileDetailView(
+                title: item.title,
+                content: item.content,
+                showCopyButton: item.showCopyButton
+            )
+        }
+        stackView.addArrangedSubviews(views)
     }
 }
